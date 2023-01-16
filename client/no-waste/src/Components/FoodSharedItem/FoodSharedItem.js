@@ -20,13 +20,15 @@ function FoodSharedItem({ item, name, userThatShared, userThatPostsReview}) {
   const onSubmitReview = () => {
     const userThatPostsReviewName = userThatPostsReview.name;
     const id = userThatShared;
+    const photo = item.photo;
+    const name = item.title
     setIsSpinner(true)
     setTimeout(() => {
     setShowReview(false)
       setIsSpinner(false)
       setReviewThanks(true)
     }, 2500)
-    addReview(review, userThatPostsReviewName, id)
+    addReview(review, userThatPostsReviewName, photo, name, id)
   }
 
   const onBooking = () => {
@@ -80,7 +82,7 @@ function FoodSharedItem({ item, name, userThatShared, userThatPostsReview}) {
         {
           isSpinner
           ?
-            <img  className="center tc"style={{borderRadius: '10px', opacity: 0.8, width: '50px'}} src={food}></img> :
+            <img  className="center ma2 tc"style={{borderRadius: '10px', opacity: 0.8, width: '50px'}} src={food}></img> :
             <></>
         }
       </div>

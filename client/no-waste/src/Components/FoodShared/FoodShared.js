@@ -40,8 +40,11 @@ const { user } = useContext(LoginContext);
       {/* {itemsShared.map((foodItem) =>  <FoodSharedItem key={foodItem._id} item={foodItem}/>)} */}
       {/* <p onClick={() => showFood} className="formButton ma2 bg-light-yellow f5 grow pv2 br2" type='submit'>show food</p> */}
       {/* <FoodSharedItem/> */}
+            {/* {itemsShared.length > 0 ? itemsShared.map((outerObject) => outerObject.posts.map((foodItem) => foodItem).sort((a, b) => a.date - b.date)) : "no food yet"} */}
     </div>
   )
 }
 
 export default FoodShared
+
+    // newUser.posts = newUser.posts.sort((a, b) => a.date - b.date)

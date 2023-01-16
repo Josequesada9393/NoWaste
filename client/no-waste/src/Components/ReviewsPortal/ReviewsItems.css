@@ -1,0 +1,22 @@
+.mainReviewsContainer {
+  min-width: 20%;
+  max-width: 20%;
+  min-height: 300px;
+  margin: 10px;
+}
+
+.ReviewsContainer {
+  /* display: flex;
+  overflow-y: scroll;
+  border: 2px solid black;
+  margin: 2px; */
+}
+
+.fatherOfAll {
+  margin-top: 50px;
+  display: flex;
+  overflow-y: auto;
+  width: auto;
+  height: 100%;
+
+}

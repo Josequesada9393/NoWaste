@@ -1,19 +1,17 @@
 import React from 'react'
+import './ReviewsItems.css'
 
 function ReviewsItems({review}) {
   return (
-    <div className='mainReviewsContainer'>
-      <div className='ReviewsContainer'>
-<article class="center br3 mw5 mw6-ns hidden ba mv4 ">
-          <h1 class="f4 br3\4 bg-near-black white mv0 pv2 ph3">by {review.userThatPostsReviewName}</h1>
-  <div class="pa3 bt">
-            <p class="f6 f5-ns lh-copy bg-white measure mv0 o-50">
-              {review.review}
+    <container className="mainReviewsContainer  grow pa2 br4 shadow-5">
+      <h3 className="bg-black o-70 white br3  center tc pa3"><h2 className='yellow'>{review.userThatPostsReviewName}</h2> reviewed your <h2 className='yellow'>{review.name}</h2></h3>
+    <div className="">
+    <p className="ma3">
+          {review.review}
     </p>
-  </div>
-        </article>
-        </div>
+        <img className="br4 o-70 pa1 center" width="150px" height="auto" src={review.photo}></img>
     </div>
+   </container>
   )
 }
 

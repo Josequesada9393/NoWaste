@@ -7,7 +7,7 @@ function ReviewsPortal() {
   const { user } = useContext(LoginContext);
 
   return (
-    <div>
+    <div className='fatherOfAll'>
       {user.reviews.map((review) => <ReviewsItems review={review} />)}
     </div>
   )

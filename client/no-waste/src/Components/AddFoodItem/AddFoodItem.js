@@ -24,10 +24,9 @@ function AddFoodItem() {
     e.preventDefault();
     const response = await addItem(id, title, date, photo, address)
     console.log(response)
-    setUser(response[0])
+    setUser(response)
       }
   }
-
   return (
     <div className='AddItemForm br4 '>
         <input className="formInput ma1 pa2 br2 hover-bg-dark-blue " type="text" placeholder='Insert' name='title' value={title}

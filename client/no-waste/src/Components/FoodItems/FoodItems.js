@@ -12,7 +12,7 @@ function FoodItems({  }) {
   return (
 
     <div className='container shadow-5 br2 bg-transparent w-70 '>
-      {user.posts.map((foodItem) => <FoodItem user={user} key={user._id} item={foodItem} />)}
+      {user.posts.map((foodItem) => <FoodItem setUser={setUser } user={user} key={user._id} item={foodItem} />)}
     </div>
 
   )

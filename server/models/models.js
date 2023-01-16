@@ -8,7 +8,9 @@ const userSchema = new Schema({
   name: String,
   reviews: [{
     review: String,
-    userThatPostsReviewName: String
+    userThatPostsReviewName: String,
+    photo: String,
+    name: String
   }],
   posts: [
     {
