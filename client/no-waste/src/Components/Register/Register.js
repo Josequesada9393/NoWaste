@@ -2,6 +2,7 @@ import React from 'react'
 import 'tachyons'
 
 function Register() {
+  
   return (
   <div className="br2 ba dark-gray mv6 mw5 center">
   <main className="pa4 black-80 tc">
