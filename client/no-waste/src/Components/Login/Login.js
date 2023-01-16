@@ -22,7 +22,6 @@ function Login({ }) {
   return (
     <>
       <div id="tsparticles"></div>
-
         <div className="br2 ba dark-gray mv4 mw5 center">
           <main className="pa4 black-80 tc">
             <div className="measure">

@@ -2,9 +2,9 @@ import React from 'react'
 import FoodItem from '../FoodItem/FoodItem'
 import { LoginContext } from '../../LoginContext/LoginContext'
 import './FoodItems.css'
-import { useEffect, useState, useContext } from 'react'
+import {useContext } from 'react'
 
-function FoodItems({  }) {
+function FoodItems() {
 
   const { setUser, user } = useContext(LoginContext);
 

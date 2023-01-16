@@ -7,10 +7,6 @@ import { LoginContext } from './LoginContext/LoginContext';
 import { useState, useEffect } from 'react';
 function App() {
 
-
-
-
-  //states
 const [isLoggedIn, setLoggedIn] = useState(false)
 const [user, setUser] = useState({
 })
@@ -18,11 +14,10 @@ const [user, setUser] = useState({
   return (
     <div className="App">
       <LoginContext.Provider value={{ user, setUser, setLoggedIn }}>
-          <NavBar isLoggedIn={isLoggedIn} />
+     <NavBar isLoggedIn={isLoggedIn} />
       {isLoggedIn ? <Profile/> :
       <Login />}
       </LoginContext.Provider>
-
       </div>
   );
 }

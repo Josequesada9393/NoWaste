@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import FoodSharedItem from '../FoodSharedItem/FoodSharedItem'
-import { useState, useContext } from 'react'
+import {useContext} from 'react'
 import { findFood } from '../../ApiServices/ApiServices';
 import { LoginContext } from '../../LoginContext/LoginContext';
 import "./FoodShared.css"
@@ -20,31 +20,14 @@ const { user } = useContext(LoginContext);
   useEffect(() => {
     showFood()
   },[])
-  // function getData(mainArray) {
-  // mainArray.forEach(function(outerObject) {
-  //   outerObject.posts.map(function(innerObject) {
-  //     return innerObject;
-  //   });
-  // });
-  // }
 
   return (
     <div className='foodSharedContainer shadow-5 center tc'>
 
-      {/* {itemsShared.length > 0 ? <FoodSharedItem email={itemsShared[0].email} /> : "no food yet"} */}
-     {/* {itemsShared.length > 0 ? <FoodSharedItem email={itemsShared.map((email) => email={email})}/> : "no food yet"} */}
-
-      {/* {<p>show this if data does not render</p>} */}
-      {/* {itemsShared.length > 0 ? itemsShared[0].posts.map((foodItem) => <FoodSharedItem item={foodItem}/>) : "no food yet"} */}
       {itemsShared.length > 0 ? itemsShared.map((outerObject) => outerObject.posts.map((foodItem) => <FoodSharedItem userThatPostsReview={user} userThatShared={outerObject._id} name={outerObject.name} key={foodItem._id} item={foodItem} /> )) : "no food yet"}
-      {/* {itemsShared.map((foodItem) =>  <FoodSharedItem key={foodItem._id} item={foodItem}/>)} */}
-      {/* <p onClick={() => showFood} className="formButton ma2 bg-light-yellow f5 grow pv2 br2" type='submit'>show food</p> */}
-      {/* <FoodSharedItem/> */}
-            {/* {itemsShared.length > 0 ? itemsShared.map((outerObject) => outerObject.posts.map((foodItem) => foodItem).sort((a, b) => a.date - b.date)) : "no food yet"} */}
+
     </div>
   )
 }
 
 export default FoodShared
-
-    // newUser.posts = newUser.posts.sort((a, b) => a.date - b.date)

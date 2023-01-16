@@ -8,6 +8,9 @@ body {
   font-family: 'Lora', Arial, Helvetica, sans-serif
 }
 
+.niceFont {
+  font-family: 'Acme', sans-serif;
+}
 .map-container{
   width: 60%;
   height: 450px;
