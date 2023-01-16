@@ -18,6 +18,8 @@ exports.addItem = async (req, res) => {
     // console.log(req.body)
     const id = req.body.id;
     const post = await req.body;
+    console.log(id)
+    console.log(post)
     if (!post.title || !post.date || !post.address || !post.photo) {
       return res.status(400).send('enter all fields')
     }
@@ -32,6 +34,21 @@ exports.addItem = async (req, res) => {
     res.send(newUser)
   } catch (error) {
   }
+}
+
+exports.addReview = async (req, res) => {
+  try {
+  const id = await req.body.id;
+    const review = await req.body;
+        console.log(review)
+
+  await user.updateOne({ _id: id }, { $push: { reviews: review}})
+  const newUser = await user.find({_id:id})
+  res.send(newUser)
+  } catch (error) {
+    res.send(error)
+  }
+
 }
 
 // exports.fetchUser = async (req, res) => {

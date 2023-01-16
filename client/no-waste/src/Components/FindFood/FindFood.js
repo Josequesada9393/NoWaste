@@ -38,6 +38,23 @@ const [itemsShared, setItemsShared] = useState({})
             </div>
     </div>
   </article>
+      </section>
+
+       <section class="ph3 ph5-ns pv5">
+  <article class="mw8 br4 center br2 ba b--red bg-light-red">
+    <div class="dt-ns dt--fixed-ns w-100">
+      <div class="pa3 pa4-ns dtc-ns v-mid">
+        <div>
+          <h2 class="fw4 f3 black mt0 mb3">see what others say about you </h2>
+          <p class="black-70 measure lh-copy mv0">
+         </p>
+        </div>
+      </div>
+      <div class="pa3 pa4-ns dtc-ns v-mid">
+        <Link to="../reviews"><p href="#" class="no-underline f6 tc db w-100 pv3 bg-animate bg-light-yellow hover-bg-yellow black br2">check out your reviews!</p></Link>
+            </div>
+    </div>
+  </article>
 </section>
     </div>
   )

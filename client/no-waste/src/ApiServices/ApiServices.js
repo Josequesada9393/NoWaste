@@ -42,7 +42,22 @@ const findFood = async (id) => {
 }
 
 
-
+const addReview = async (review, userThatPostsReviewName, id) => {
+  console.log(review, "this is review")
+  console.log(id, "this is id")
+  return fetch('http://localhost:4000/addReview', {
+    method: 'PUT',
+    body: JSON.stringify({review, userThatPostsReviewName, id}),
+    headers: { 'Content-Type': 'application/json' },
+  })
+    .then(response => response.json())
+    .then(response => {
+      console.log(response);
+      return response
+    })
+    .catch((error) => {console.log('error adding review')
+    });
+}
 
 const getItems = () => {
     return fetch('http://localhost:4000/getItems')
@@ -69,4 +84,4 @@ const deleteItemById = (userId, itemId) => {
 
 
 
- export {loginIn, addItem, getItems, findFood, deleteItemById}
+ export {loginIn, addItem, getItems, findFood, deleteItemById, addReview}

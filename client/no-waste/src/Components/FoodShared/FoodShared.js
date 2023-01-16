@@ -36,7 +36,7 @@ const { user } = useContext(LoginContext);
 
       {/* {<p>show this if data does not render</p>} */}
       {/* {itemsShared.length > 0 ? itemsShared[0].posts.map((foodItem) => <FoodSharedItem item={foodItem}/>) : "no food yet"} */}
-      {itemsShared.length > 0 ? itemsShared.map((outerObject) => outerObject.posts.map((foodItem) => <FoodSharedItem name={outerObject.name} key={foodItem._id} item={foodItem} /> )) : "no food yet"}
+      {itemsShared.length > 0 ? itemsShared.map((outerObject) => outerObject.posts.map((foodItem) => <FoodSharedItem userThatPostsReview={user} userThatShared={outerObject._id} name={outerObject.name} key={foodItem._id} item={foodItem} /> )) : "no food yet"}
       {/* {itemsShared.map((foodItem) =>  <FoodSharedItem key={foodItem._id} item={foodItem}/>)} */}
       {/* <p onClick={() => showFood} className="formButton ma2 bg-light-yellow f5 grow pv2 br2" type='submit'>show food</p> */}
       {/* <FoodSharedItem/> */}

@@ -5,8 +5,7 @@ import ShareFood from '../ShareFood/ShareFood'
 import FindFood from '../FindFood/FindFood'
 import ProfileOptions from '../ProfileOptions/ProfileOptions'
 import About from '../About/About'
-import Login from '../Login/Login'
-
+import ReviewsPortal from '../ReviewsPortal/ReviewsPortal'
 function Profile({}) {
   return (
 <Router>
@@ -14,7 +13,9 @@ function Profile({}) {
       <Route path="/" element={<ProfileOptions/>}/>
       <Route path="/sharefood" element={<ShareFood/>}/>
       <Route path="/findfood" element={<FindFood />} />
-      <Route path="/about" element={<About/>}/>
+      <Route path="/reviews" element={<ReviewsPortal />} />
+      <Route path="/about" element={<About />} />
+
       </Routes>
     </Router>
   )

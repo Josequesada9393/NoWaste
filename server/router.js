@@ -13,6 +13,8 @@ router.post('/login', user.login)
 
 router.put('/addItem', user.addItem)
 
+router.put('/addReview', user.addReview)
+
 router.get('/findFood/:id', user.findFood)
 
 router.delete('/deleteItem/:userId/:itemId', user.deleteById)

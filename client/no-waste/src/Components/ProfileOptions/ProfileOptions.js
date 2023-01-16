@@ -24,7 +24,7 @@ function ProfileOptions({ }) {
         </div>
       </div>
       <div class="pa3 pa4-ns dtc-ns v-mid">
-      <Link to="sharefood"> <p class="no-underline f6 tc db w-100 pv3 bg-animate bg-light-yellow hover-bg-yellow black br2">Share food Now!</p></Link>
+      <Link to="sharefood"> <p class="no-underline f6 tc db w-100 pv3 bg-animate b bg-light-yellow hover-bg-yellow black br2">Share food Now!</p></Link>
        </div>
     </div>
   </article>
@@ -42,11 +42,28 @@ function ProfileOptions({ }) {
         </div>
       </div>
       <div class="pa3 pa4-ns dtc-ns v-mid">
-       <Link to="findfood"> <p class="no-underline f6 tc db w-100 pv3 bg-animate bg-light-yellow hover-bg-yellow black br2">Find food now!</p></Link>
+       <Link to="findfood"> <p class="no-underline f6 tc db w-100 pv3 bg-animate b bg-light-yellow hover-bg-yellow black br2">Find food now!</p></Link>
             </div>
     </div>
   </article>
       </section>
+
+
+      <article class="mw8 br4 center br2 ba b--red bg-light-red">
+          <div class="dt-ns dt--fixed-ns w-100">
+      <div class="pa3 pa4-ns  dtc-ns v-mid">
+        <div>
+          <h2 class="fw4 f3 black mt0 mb3">Check out what other users say about your food! </h2>
+          <p class="black-70 measure lh-copy mv0">
+            Others are talking about you! Every time someone books your food, they get to write a review!
+          </p>
+        </div>
+      </div>
+      <div class="pa3 pa4-ns dtc-ns v-mid">
+      <Link to="reviews"> <p class="no-underline f6 tc db w-100 b pv3 bg-animate bg-light-yellow hover-bg-yellow black br2">See your reviews!</p></Link>
+       </div>
+    </div>
+  </article>
     </div>
   )
 }

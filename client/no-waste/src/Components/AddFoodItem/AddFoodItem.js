@@ -25,7 +25,7 @@ function AddFoodItem() {
     const response = await addItem(id, title, date, photo, address)
     console.log(response)
     setUser(response[0])
-  }
+      }
   }
 
   return (

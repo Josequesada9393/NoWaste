@@ -27,7 +27,7 @@ function Login({ }) {
           <main className="pa4 black-80 tc">
             <div className="measure">
               <div id="register" className="ba b--transparent ph0 mh0">
-              <legend className="f4 fw6 ph0 mh0 center font-link">Login</legend>
+              <legend className="f4 fw6 ph0 mh0 center font-link"><h1>NoWaste</h1></legend>
               <IconLogin/>
               <div className="mt3">
                   <label className="db fw6 lh-copy f6" HtmlFor="email">Email</label>

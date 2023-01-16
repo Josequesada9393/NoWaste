@@ -6,6 +6,10 @@ const userSchema = new Schema({
   email: String,
   password: String,
   name: String,
+  reviews: [{
+    review: String,
+    userThatPostsReviewName: String
+  }],
   posts: [
     {
       title: String,
