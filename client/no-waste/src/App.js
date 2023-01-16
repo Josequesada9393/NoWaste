@@ -8,6 +8,9 @@ import { LoginContext } from './LoginContext/LoginContext';
 import { useState, useEffect } from 'react';
 function App() {
 
+
+
+
   //states
 const [isLoggedIn, setLoggedIn] = useState(false)
 const [user, setUser] = useState({
@@ -15,7 +18,7 @@ const [user, setUser] = useState({
 
   return (
     <div className="App">
-      <LoginContext.Provider value={{user, setUser, setLoggedIn}}>
+      <LoginContext.Provider value={{ user, setUser, setLoggedIn }}>
       <NavBar isLoggedIn={isLoggedIn}  />
       {isLoggedIn ? <Profile/> :
       <Login />}
@@ -24,5 +27,4 @@ const [user, setUser] = useState({
     </div>
   );
 }
-
 export default App;

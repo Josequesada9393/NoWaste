@@ -1,12 +1,20 @@
 import React from 'react'
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import { useContext } from 'react'
+import { LoginContext } from '../../LoginContext/LoginContext'
+import Icon from '../../Style/Icon'
+function ProfileOptions({ }) {
+    const {user} = useContext(LoginContext)
 
-function ProfileOptions({}) {
   return (
     <div>
-       <section class="ph3 ph5-ns pv5">
-  <article class="mw8 br4 center br2 ba b--red bg-light-red">
-    <div class="dt-ns dt--fixed-ns w-100">
+      <section class="ph3 ph5-ns pv1 tc center">
+        <h1>Welcome back {user.name}</h1>
+        <article class="mw8 br4 center br2 ba b--red bg-light-red">
+          <div class="dt-ns dt--fixed-ns w-100">
+<Icon/>
+
+
       <div class="pa3 pa4-ns  dtc-ns v-mid">
         <div>
           <h2 class="fw4 f3 black mt0 mb3">Did you cook too much? </h2>

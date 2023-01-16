@@ -3,17 +3,19 @@ import FoodItems from '../FoodItems/FoodItems'
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import AddFoodItem from '../AddFoodItem/AddFoodItem';
 import './ShareFood.css'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { LoginContext } from '../../LoginContext/LoginContext';
 
 
 function ShareFood({}) {
-
+const {user} = useContext(LoginContext)
 
   return (
     <div className='shareFood'>
+      <AddFoodItem />
+      <div className='itemShare tc center ma1 b pa2 br2 bg-black white grow'><h4>Items posted by {user.name}</h4></div>
 
-    {/* <AddFoodItem /> */}
-     <FoodItems/>
+    <FoodItems/>
    <section class="ph3 ph5-ns pv5">
   <article class="mw8 br4 center br2 ba b--red bg-light-red">
     <div class="dt-ns dt--fixed-ns w-100">

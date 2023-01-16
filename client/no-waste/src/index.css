@@ -4,6 +4,17 @@ body {
   background-color: #68879e
 }
 
+* {
+  font-family: 'Lora', Arial, Helvetica, sans-serif
+}
+
+.map-container{
+  width: 60%;
+  height: 450px;
+  border-radius: 20px;
+
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

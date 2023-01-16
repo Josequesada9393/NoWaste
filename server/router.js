@@ -1,28 +1,23 @@
 const router = require('express').Router()
 const db = require('./db')
+const user = require('./controller/controller')
 // const event = require('./controller/controller')
 
 router.get('/', (req, res) => {
   res.send(db.users)
 } )
 
-router.post('/login', async (req, res) => {
-  const email = await req.body.email;
-  const password = await req.body.password;
-  console.log(req.body)
-  let found = false
-  db.users.forEach(user => {
-    if (user.email === email && user.password === password) {
-      found = true;
-    return res.json(user)
-    }
-    if (!found) {
-      res.send('not found, please register')
-    }
-})
-})
+router.get('/fetchUser/:id')
 
-router.get('/getItems')
+router.post('/login', user.login)
+
+router.put('/addItem', user.addItem)
+
+router.get('/findFood/:id', user.findFood)
+
+router.delete('/deleteItem/:userId/:itemId', user.deleteById)
+
+
 // router.post('',)
 
 // router.delete('',)

@@ -31,29 +31,40 @@
           postId: '1',
           title: 'homemade burguers',
           date: 'date posted',
-          address: 'pick up address',
+          address: 'Mountain street',
           photos: ["https://cdn.britannica.com/98/235798-050-3C3BA15D/Hamburger-and-french-fries-paper-box.jpg"]
         },
         {
           postId: '2',
           title: 'vegan sandwiches',
           date: 'date posted',
-          address: 'pick up address',
+          address: 'BeverlyHills',
           photos: ["https://cdn.https://hurrythefoodup.com/wp-content/uploads/2021/03/Vegan-Sandwich-Recipes-image.jpg.com/98/235798-050-3C3BA15D/Hamburger-and-french-fries-paper-box.jpg"]
         }
       ]
 
     },
      {
-       id: '3',
+      id: '3',
       email: 'test2@test.com',
-       password: 'test3',
-      photos: [
+      password: 'test2',
+      posts: [
         {
-          name: "salad",
-          image: ""
+          postId: '1',
+          title: 'homemade burguers',
+          date: 'date posted',
+          address: 'Mountain street',
+          photos: ["https://cdn.britannica.com/98/235798-050-3C3BA15D/Hamburger-and-french-fries-paper-box.jpg"]
+        },
+        {
+          postId: '2',
+          title: 'vegan sandwiches',
+          date: 'date posted',
+          address: 'BeverlyHills',
+          photos: ["https://cdn.https://hurrythefoodup.com/wp-content/uploads/2021/03/Vegan-Sandwich-Recipes-image.jpg.com/98/235798-050-3C3BA15D/Hamburger-and-french-fries-paper-box.jpg"]
         }
       ]
+
     }
 ]
  }
