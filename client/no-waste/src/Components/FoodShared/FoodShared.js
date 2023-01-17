@@ -23,8 +23,30 @@ const { user } = useContext(LoginContext);
 
   return (
     <div className='foodSharedContainer shadow-5 center tc'>
+{
+  itemsShared.length > 0 ?
+    itemsShared
+      .reduce((acc, outerObject) => acc.concat(outerObject.posts), [])
+      .sort((a, b) => new Date(a.date) - new Date(b.date))
+      .map((foodItem, i) => {
+        const outerObject = itemsShared.find(
+          (outerObject) => outerObject.posts.includes(foodItem)
+        );
+        return (
+          <FoodSharedItem
+            userThatPostsReview={user}
+            userThatShared={outerObject._id}
+            name={outerObject.name}
+            key={foodItem._id || i}
+            item={foodItem}
+            outerObject={outerObject}
+          />
+        );
+      })
+    : "no food yet"
+}
 
-      {itemsShared.length > 0 ? itemsShared.map((outerObject) => outerObject.posts.map((foodItem) => <FoodSharedItem userThatPostsReview={user} userThatShared={outerObject._id} name={outerObject.name} key={foodItem._id} item={foodItem} /> )) : "no food yet"}
+
 
     </div>
   )

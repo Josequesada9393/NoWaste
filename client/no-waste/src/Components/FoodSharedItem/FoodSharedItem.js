@@ -13,7 +13,6 @@ function FoodSharedItem({ item, name, userThatShared, userThatPostsReview}) {
   const [review, setReview] = useState('')
 
   const showReviewBox = () => {
-    console.log('make it true')
     setShowReview(!showReview)
   }
 
