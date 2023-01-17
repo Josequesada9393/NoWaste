@@ -36,16 +36,49 @@ function AddFoodItem() {
       setAddress('')
       }
   }
+
+  //handle and conver it in base 64
+  const handleImage = (e) => {
+    const file = e.target.files[0];
+    setFileToBase(file);
+    console.log(file)
+}
+
+  const setFileToBase = (file) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+    setImage(reader.result)
+    }
+  }
+
   return (
-    <div className='AddItemForm shadow-5 br4 '>
+    //original
+    // <div className='AddItemForm shadow-5 br4 '>
+    //      <button onClick={onSubmit} className="formButton ma2 bg-light-yellow f5 grow pv2 br2" type='submit'>Add a new food item!</button>
+    //     <input className="formInput ma1 pa2 br2 hover-bg-dark-blue " type="text" placeholder='Insert' name='title' value={title}
+    //     onChange={(e) => setTitle(e.target.value)} required/>
+    //     <input className='formInput ma1 pa2 br2 hover-bg-dark-blue' type="datetime-local" placeholder="date" name="date" value={date}
+    //     onChange={(e) => setDate(e.target.value)} required/>
+    //     <input className='formInput ma1 pa2 br2 hover-bg-dark-blue' type="text" placeholder="photo" name="photo" value={photo}
+    //     onChange={(e) => setPhoto(e.target.value)} required />
+    //   <AutoComplete address={address} coordinates={coordinates} setAddress={setAddress} setCoordinates={setCoordinates} />
+
+    //     {/* <input className='formInput ma1 pa2 br2 hover-bg-dark-blue' type="text" placeholder="address" name="address" value={address}
+    //     onChange={(e) => setAddress(e.target.value)} required/> */}
+    // </div>
+
+
+
+        <div className='AddItemForm shadow-5 br4 '>
          <button onClick={onSubmit} className="formButton ma2 bg-light-yellow f5 grow pv2 br2" type='submit'>Add a new food item!</button>
         <input className="formInput ma1 pa2 br2 hover-bg-dark-blue " type="text" placeholder='Insert' name='title' value={title}
         onChange={(e) => setTitle(e.target.value)} required/>
         <input className='formInput ma1 pa2 br2 hover-bg-dark-blue' type="datetime-local" placeholder="date" name="date" value={date}
         onChange={(e) => setDate(e.target.value)} required/>
-        <input className='formInput ma1 pa2 br2 hover-bg-dark-blue' type="text" placeholder="photo" name="photo" value={photo}
+        <input className='formInput ma1 pa2 br2 hover-bg-dark-blue' type="file" placeholder="photo" name="photo" value={photo}
         onChange={(e) => setPhoto(e.target.value)} required />
-      <AutoComplete  className='formInput ma1 pa2 br2 hover-bg-dark-blue' address={address} coordinates={coordinates} setAddress={setAddress} setCoordinates={setCoordinates} />
+      <AutoComplete address={address} coordinates={coordinates} setAddress={setAddress} setCoordinates={setCoordinates} />
 
         {/* <input className='formInput ma1 pa2 br2 hover-bg-dark-blue' type="text" placeholder="address" name="address" value={address}
         onChange={(e) => setAddress(e.target.value)} required/> */}

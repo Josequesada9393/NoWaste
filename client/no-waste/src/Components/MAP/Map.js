@@ -31,8 +31,6 @@ const divStyle = {
           <InfoWindow position={home}
           >
           <img className="center bg-white tc" style={{width: '50px', height: '50px', marginRight: "11px"}} src="https://static.vecteezy.com/system/resources/previews/004/416/880/original/simple-house-icon-on-white-background-free-vector.jpg"></img>
-
-
           </InfoWindow>
         }
           </MarkerF>
