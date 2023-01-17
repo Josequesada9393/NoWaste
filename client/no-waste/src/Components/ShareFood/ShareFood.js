@@ -12,8 +12,9 @@ const {user} = useContext(LoginContext)
 
   return (
     <div className='shareFood'>
+            <div className='itemShare tc w-20 center ma1  pa2 br2 bg-black white grow o-80'><h4>{user.name.toUpperCase()}'S FOOD PORTAL</h4></div>
+
       <AddFoodItem />
-      <div className='itemShare tc center ma1 b pa2 br2 bg-black white grow'><h4>Items posted by {user.name}</h4></div>
 
     <FoodItems/>
    <section class="ph3 ph5-ns pv5">

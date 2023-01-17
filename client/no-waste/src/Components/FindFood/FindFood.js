@@ -17,8 +17,9 @@ const [itemsShared, setItemsShared] = useState({})
   return (
 
     <div>
-      <div className='title br4 tc center b h2 w5 ma1'><h2 className='tc center niceFont consolas'>Find delicious food near you</h2>
-      <img  className="tc center ma1" style={{borderRadius: '10px', opacity: 0.5, width: '80px'}} src={dining}></img></div>
+      <div className='title br4 w-80 tc center b h2 w5 ma5'>
+        <img className="tc center ma1" style={{ borderRadius: '10px', opacity: 0.7, width: '80px' }} src={dining}></img>
+      <h1 className='tc center niceFont consolas'>Food near you</h1></div>
       <FoodShared itemsShared={itemsShared} setItemsShared={setItemsShared} />
       <Map itemsShared={itemsShared} />
 

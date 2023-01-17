@@ -22,16 +22,16 @@ function Login({ }) {
   return (
     <>
       <div id="tsparticles"></div>
-        <div className="br2 ba dark-gray mv4 mw5 center">
+        <div id="alegreya" className="br2 ba dark-gray mv4 mw5 center">
           <main className="pa4 black-80 tc">
             <div className="measure">
               <div id="register" className="ba b--transparent ph0 mh0">
-              <legend className="f4 fw6 ph0 mh0 center font-link"><h1>NoWaste</h1></legend>
+              <legend className="f4 fw6 ph0 mh0 center"><h1>NoWaste</h1></legend>
               <IconLogin/>
               <div className="mt3">
-                  <label className="db fw6 lh-copy f6" HtmlFor="email">Email</label>
+                  <label className="db fw6 lh-copy  f6" HtmlFor="email">Email</label>
                   <input
-                    className="pa2 input-reset ba hover-bg-light-purple w-100"
+                    className="pa2 input-reset ba hoverPink w-100"
                     type="email"
                     name="email"
                     id="email"
@@ -39,9 +39,9 @@ function Login({ }) {
                   />
                 </div>
                 <div className="mv3">
-                  <label className="db fw6 lh-copy f6" HtmlFor="password">Password</label>
+                  <label className="db fw6 lh-copy  f6" HtmlFor="password">Password</label>
                   <input
-                    className="b pa2 input-reset ba bg-white hover-bg-light-purple hover-white w-100"
+                    className="b pa2 input-reset ba bg-white hoverPink hover-white w-100"
                     type="password"
                     name="password"
                     id="password"

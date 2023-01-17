@@ -11,6 +11,10 @@ body {
 .niceFont {
   font-family: 'Acme', sans-serif;
 }
+
+#alegreya{
+  font-family: Alegreya, serif;
+}
 .map-container{
   width: 60%;
   height: 450px;
@@ -25,10 +29,22 @@ body {
   background-color: white;
   opacity: 0.8;
   height: 20px;
-  width: 200px;
-  overflow-y: auto;
+  /* width: 300px; */
+  /* overflow-y: auto; */
+  z-index: 100
+}
+.hoverPink:hover {
+    background-color: rgb(255, 163, 215, 0.2);
+}
+.formInput {
+  width: 100%;
+
 }
 
+.nicebackground {
+    background: linear-gradient(99deg, #121112 5%, #3c203d 50%, #1b161b 100%);
+    opacity: 0.6;
+}
 
 
 @tailwind base;

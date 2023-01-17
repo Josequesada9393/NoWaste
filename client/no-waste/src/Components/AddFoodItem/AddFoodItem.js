@@ -45,7 +45,7 @@ function AddFoodItem() {
         onChange={(e) => setDate(e.target.value)} required/>
         <input className='formInput ma1 pa2 br2 hover-bg-dark-blue' type="text" placeholder="photo" name="photo" value={photo}
         onChange={(e) => setPhoto(e.target.value)} required />
-      <AutoComplete address={address} coordinates={coordinates} setAddress={setAddress} setCoordinates={setCoordinates} />
+      <AutoComplete  className='formInput ma1 pa2 br2 hover-bg-dark-blue' address={address} coordinates={coordinates} setAddress={setAddress} setCoordinates={setCoordinates} />
 
         {/* <input className='formInput ma1 pa2 br2 hover-bg-dark-blue' type="text" placeholder="address" name="address" value={address}
         onChange={(e) => setAddress(e.target.value)} required/> */}

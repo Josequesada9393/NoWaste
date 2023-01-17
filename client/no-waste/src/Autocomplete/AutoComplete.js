@@ -26,19 +26,19 @@ function AutoComplete({address, setAddress, coordinates, setCoordinates}) {
             <input
               {...getInputProps({
                 placeholder: 'Pick up address',
-                className: 'location-search-input formInput ma1 pa2 br2 hover-bg-dark-blue',
+                className: 'formInput ma1 pa2 br2 hover-bg-dark-blue',
               })}
             />
             <div className="autocomplete-dropdown-container">
               {loading && <div>Loading...</div>}
               {suggestions.map(suggestion => {
                 const className = suggestion.active
-                  ? 'suggestion-item--active autocomplete'
-                  : 'suggestion-item autocomplete';
+                  ? 'suggestion-item--active ma0 b autocomplete'
+                  : 'suggestion-item autocomplete b ma0';
                 // inline style for demonstration purpose
                 const style = suggestion.active
-                  ? { margin: "2px", padding: '5px', borderRadius: '3px',  cursor: 'pointer', backgroundColor: 'black', color: 'white'}
-                  : { margin: "2px", padding: '5px', borderRadius: '3px', cursor: 'pointer'};
+                  ? { borderRadius: '1px', padding: '4px', cursor: 'pointer', backgroundColor: 'black', color: 'white'}
+                  : { borderRadius: '1px', padding: '4px', cursor: 'pointer'};
                 return (
                   <div
                     {...getSuggestionItemProps(suggestion, {
