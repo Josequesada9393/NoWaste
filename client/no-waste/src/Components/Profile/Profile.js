@@ -8,16 +8,15 @@ import About from '../About/About'
 import ReviewsPortal from '../ReviewsPortal/ReviewsPortal'
 function Profile({}) {
   return (
-<Router>
+<div>
       <Routes>
       <Route path="/" element={<ProfileOptions/>}/>
       <Route path="/sharefood" element={<ShareFood/>}/>
       <Route path="/findfood" element={<FindFood />} />
       <Route path="/reviews" element={<ReviewsPortal />} />
       <Route path="/about" element={<About />} />
-
       </Routes>
-    </Router>
+    </div>
   )
 }
 
