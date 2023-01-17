@@ -8,7 +8,6 @@ import AutoComplete from '../../Autocomplete/AutoComplete';
 function AddFoodItem() {
 
   const { setUser, user } = useContext(LoginContext)
-
   const [title, setTitle] = useState('')
   const [date, setDate] = useState('')
   const [photo, setPhoto] = useState('')
@@ -31,12 +30,15 @@ function AddFoodItem() {
     const response = await addItem(id, title, date, photo, address, coordinates)
     console.log(response)
     setUser(response)
-    
-
+      setTitle('');
+      setDate('');
+      setPhoto('');
+      setAddress('')
       }
   }
   return (
-    <div className='AddItemForm br4 '>
+    <div className='AddItemForm shadow-5 br4 '>
+         <button onClick={onSubmit} className="formButton ma2 bg-light-yellow f5 grow pv2 br2" type='submit'>Add a new food item!</button>
         <input className="formInput ma1 pa2 br2 hover-bg-dark-blue " type="text" placeholder='Insert' name='title' value={title}
         onChange={(e) => setTitle(e.target.value)} required/>
         <input className='formInput ma1 pa2 br2 hover-bg-dark-blue' type="datetime-local" placeholder="date" name="date" value={date}
@@ -47,7 +49,6 @@ function AddFoodItem() {
 
         {/* <input className='formInput ma1 pa2 br2 hover-bg-dark-blue' type="text" placeholder="address" name="address" value={address}
         onChange={(e) => setAddress(e.target.value)} required/> */}
-      <button onClick={onSubmit} className="formButton ma2 bg-light-yellow f5 grow pv2 br2" type='submit'>Add a new food item!</button>
     </div>
   )
 }

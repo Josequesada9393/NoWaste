@@ -17,7 +17,7 @@ const {user} = useContext(LoginContext)
 
     <FoodItems/>
    <section class="ph3 ph5-ns pv5">
-  <article class="mw8 br4 center br2 ba b--red bg-light-red">
+  <article class="mw8 br4 center br2 ba light-pink grow">
     <div class="dt-ns dt--fixed-ns w-100">
       <div class="pa3 pa4-ns dtc-ns v-mid">
         <div>

@@ -4,9 +4,10 @@
 display: flex;
 width: 90%;
 height: 17em;
-background-color: #FF725C;
 padding: 3%;
+background-color: rgb(255, 163, 215, 0.2);
 margin: 6px;
+margin-top: 18px;
 flex-direction: column;
 }
 

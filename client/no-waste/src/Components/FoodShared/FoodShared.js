@@ -8,9 +8,7 @@ import "./FoodShared.css"
 
 function FoodShared({itemsShared, setItemsShared}) {
 const { user } = useContext(LoginContext);
-
   const id = user._id;
-
   const showFood = async () => {
     const itemsShared = await findFood(id)
     setItemsShared(itemsShared)
@@ -45,9 +43,6 @@ const { user } = useContext(LoginContext);
       })
     : "no food yet"
 }
-
-
-
     </div>
   )
 }

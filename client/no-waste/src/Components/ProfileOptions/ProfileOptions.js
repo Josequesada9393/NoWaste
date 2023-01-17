@@ -49,7 +49,7 @@ function ProfileOptions({ }) {
       </section>
 
 
-      <article class="mw8 br4 center br2 ba bg-light-pink">
+      <article class="mw8 br4 center br2 ba light-pink">
           <div class="dt-ns dt--fixed-ns w-100">
       <div class="pa3 pa4-ns  dtc-ns v-mid">
         <div>

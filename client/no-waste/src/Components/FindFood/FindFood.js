@@ -20,10 +20,10 @@ const [itemsShared, setItemsShared] = useState({})
       <div className='title br4 tc center b h2 w5 ma1'><h2 className='tc center niceFont consolas'>Find delicious food near you</h2>
       <img  className="tc center ma1" style={{borderRadius: '10px', opacity: 0.5, width: '80px'}} src={dining}></img></div>
       <FoodShared itemsShared={itemsShared} setItemsShared={setItemsShared} />
-    <Map/>
+      <Map itemsShared={itemsShared} />
 
   <section class="ph3 ph5-ns pv5">
-  <article class="mw8 br4 center br2 ba b--red bg-light-red">
+  <article class="mw8 br4 center br2 ba grow light-pink">
     <div class="dt-ns dt--fixed-ns w-100">
       <div class="pa3 pa4-ns dtc-ns v-mid">
         <div>
@@ -40,17 +40,17 @@ const [itemsShared, setItemsShared] = useState({})
       </section>
 
        <section class="ph3 ph5-ns pv5">
-  <article class="mw8 br4 center br2 ba b--red bg-light-red">
+  <article class="mw8 br4 center br2 ba grow light-pink">
     <div class="dt-ns dt--fixed-ns w-100">
       <div class="pa3 pa4-ns dtc-ns v-mid">
         <div>
-          <h2 class="fw4 f3 black mt0 mb3">see what others say about you </h2>
+          <h2 class="fw4 f3 black mt0 mb3">See what others say about you </h2>
           <p class="black-70 measure lh-copy mv0">
          </p>
         </div>
       </div>
       <div class="pa3 pa4-ns dtc-ns v-mid">
-        <Link to="../reviews"><p href="#" class="no-underline f6 tc db w-100 pv3 bg-animate bg-light-yellow hover-bg-yellow black br2">check out your reviews!</p></Link>
+        <Link to="../reviews"><p href="#" class="no-underline f6 tc db w-100 pv3 bg-animate bg-light-yellow hover-bg-yellow black br2">Check out your reviews!</p></Link>
             </div>
     </div>
   </article>

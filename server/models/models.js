@@ -17,7 +17,11 @@ const userSchema = new Schema({
       title: String,
       date: Date,
       address: String,
-      photo: String
+      photo: String,
+      coordinates: [{
+        lat: String,
+        lng: String
+      }]
     }
   ]
 },

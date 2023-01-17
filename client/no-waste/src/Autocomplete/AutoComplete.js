@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Children } from 'react'
 import PlacesAutocomplete from 'react-places-autocomplete';
 import { useState } from 'react';
 import { geocodeByAddress, geocodeByPlaceId, getLatLng } from 'react-places-autocomplete'
@@ -33,12 +33,12 @@ function AutoComplete({address, setAddress, coordinates, setCoordinates}) {
               {loading && <div>Loading...</div>}
               {suggestions.map(suggestion => {
                 const className = suggestion.active
-                  ? 'suggestion-item--active'
-                  : 'suggestion-item';
+                  ? 'suggestion-item--active autocomplete'
+                  : 'suggestion-item autocomplete';
                 // inline style for demonstration purpose
                 const style = suggestion.active
-                  ? { margin: "2px", borderRadius: '10px',  backgroundColor: 'transparent', cursor: 'pointer' }
-                  : { margin: "2px", borderRadius: '10px', backgroundColor: 'yellow', cursor: 'pointer' };
+                  ? { margin: "2px", padding: '5px', borderRadius: '3px',  cursor: 'pointer', backgroundColor: 'black', color: 'white'}
+                  : { margin: "2px", padding: '5px', borderRadius: '3px', cursor: 'pointer'};
                 return (
                   <div
                     {...getSuggestionItemProps(suggestion, {
