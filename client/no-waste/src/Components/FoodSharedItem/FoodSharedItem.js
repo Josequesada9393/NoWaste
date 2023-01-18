@@ -55,7 +55,7 @@ function FoodSharedItem({ item, name, userThatShared, userThatPostsReview}) {
           <div className='itemShare tc center  b pa1 br2 black bg-light-pink grow'><h4>{item.title} <a className='i black'>by {name}</a></h4></div>
           <div className='itemShare tc center ma1 pa1 br2 bg-white grow'><h4><h4 className="b">Pick up by:</h4>{moment(item.date).format('MMMM Do YYYY, h:mm a')}</h4></div>
           <div className='itemShare tc center pa1 br2 bg-white grow'><h4><h4 className="b">Pick up in:</h4>{item.address}</h4></div>
-          <div className='itemShare tc center ma1 pa1 br2 bg-white grow'><img className="tc center" src={item.photo} width="150px" height="auto"></img></div>
+          <div className='itemShare tc center ma1 pa1 br2 bg-white grow'><img className="tc center" src={item.photo.urlc} width="150px" height="auto"></img></div>
           <div className='itemShare tc center pa1 br2 bg-black white grow' onClick={onBooking}><h4>Book</h4></div>
           </>
         }

@@ -48,7 +48,7 @@ function AddFoodItem() {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = () => {
-    setImage(reader.result)
+    setPhoto(reader.result)
     }
   }
 
@@ -76,8 +76,8 @@ function AddFoodItem() {
         onChange={(e) => setTitle(e.target.value)} required/>
         <input className='formInput ma1 pa2 br2 hover-bg-dark-blue' type="datetime-local" placeholder="date" name="date" value={date}
         onChange={(e) => setDate(e.target.value)} required/>
-        <input className='formInput ma1 pa2 br2 hover-bg-dark-blue' type="file" placeholder="photo" name="photo" value={photo}
-        onChange={(e) => setPhoto(e.target.value)} required />
+        <input className='formInput ma1 pa2 br2 hover-bg-dark-blue' type="file" placeholder="photo" name="photo"
+        onChange={handleImage} required />
       <AutoComplete address={address} coordinates={coordinates} setAddress={setAddress} setCoordinates={setCoordinates} />
 
         {/* <input className='formInput ma1 pa2 br2 hover-bg-dark-blue' type="text" placeholder="address" name="address" value={address}

@@ -1,5 +1,6 @@
 const user = require('../models/models')
 const mongoose = require('mongoose')
+const cloudinary = require('../utils/cloudinary')
 
 
 
@@ -31,6 +32,9 @@ exports.addReview = async (req, res) => {
 
 exports.findFood = async (req, res) => {
   try {
+
+
+
     const idToExclude = req.params.id;
     const users = await user.find({ _id: { $ne: idToExclude } })
     res.send(users)
@@ -41,11 +45,27 @@ exports.findFood = async (req, res) => {
 
 
 exports.addItem = async (req, res) => {
-  try {
-    const id = req.body.id;
-    const post = await req.body;
 
-    if (!post.title || !post.date || !post.address || !post.photo) {
+  const {title, date, address, photo, coordinates} = req.body
+  try {
+  const result = await cloudinary.uploader.upload(photo, {
+      folder: "products",
+      // width: 300,
+      // crop: "scale"
+    });
+    const id = req.body.id;
+    // const post = await req.body;
+    const post = {
+      title: title,
+      date: date,
+      address: address,
+      photo: {
+        public_id: result.public_id,
+        url: result.secure_url
+      },
+      coordinates: coordinates
+    }
+    if (!post.title || !post.date || !post.address) {
       return res.status(400).send('enter all fields')
     }
    await user.updateOne({ _id: id }, { $push: { posts: post } })

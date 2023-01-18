@@ -17,7 +17,16 @@ const userSchema = new Schema({
       title: String,
       date: Date,
       address: String,
-      photo: String,
+      photo: {
+        public_id: {
+          type: String,
+          required: true
+        },
+        url: {
+          type: String,
+          required: true
+        }
+      },
       coordinates: [{
         lat: String,
         lng: String
