@@ -18,13 +18,13 @@ exports.login = async (req, res) => {
 
 exports.addReview = async (req, res) => {
   try {
+    console.log(req.body)
   const id = await req.body.id;
   const review = await req.body;
   await user.updateOne({ _id: id }, { $push: { reviews: review}})
   const newUser = await user.find({_id:id})
   res.send(newUser)
   } catch (error) {
-    res.sendStatus(500)
     res.send(error)
   }
 }
@@ -32,9 +32,6 @@ exports.addReview = async (req, res) => {
 
 exports.findFood = async (req, res) => {
   try {
-
-
-
     const idToExclude = req.params.id;
     const users = await user.find({ _id: { $ne: idToExclude } })
     res.send(users)
@@ -45,9 +42,10 @@ exports.findFood = async (req, res) => {
 
 
 exports.addItem = async (req, res) => {
+  const { title, date, address, photo, coordinates } = req.body
 
-  const {title, date, address, photo, coordinates} = req.body
   try {
+
   const result = await cloudinary.uploader.upload(photo, {
       folder: "products",
       // width: 300,
@@ -65,7 +63,8 @@ exports.addItem = async (req, res) => {
       },
       coordinates: coordinates
     }
-    if (!post.title || !post.date || !post.address) {
+    console.log(post.photo)
+    if (!post.title || !post.date || !post.address || !post.photo.url) {
       return res.status(400).send('enter all fields')
     }
    await user.updateOne({ _id: id }, { $push: { posts: post } })

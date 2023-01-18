@@ -1,8 +1,8 @@
 import React from 'react'
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import { useContext } from 'react'
-import { LoginContext } from '../../LoginContext/LoginContext'
-import Icon from '../../Style/Icon'
+import { LoginContext } from '../../../LoginContext/LoginContext'
+import Icon from '../../../Style/Icon'
 function ProfileOptions({ }) {
     const {user} = useContext(LoginContext)
 

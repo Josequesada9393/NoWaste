@@ -9,7 +9,16 @@ const userSchema = new Schema({
   reviews: [{
     review: String,
     userThatPostsReviewName: String,
-    photo: String,
+    photo: {
+        public_id: {
+          type: String,
+          required: true
+        },
+        url: {
+          type: String,
+          required: true
+        }
+      },
     name: String
   }],
   posts: [

@@ -9,7 +9,7 @@ function ReviewsItems({review}) {
     <p className="ma3">
           {review.review}
     </p>
-        <img className="br4 o-70 pa1 center" width="150px" height="auto" src={review.photo}></img>
+        <img className="br4 o-70 pa1 center" width="150px" height="auto" src={review.photo.url}></img>
     </div>
    </container>
   )

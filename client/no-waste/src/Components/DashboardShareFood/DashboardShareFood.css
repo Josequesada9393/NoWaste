@@ -1,0 +1,11 @@
+.shareFood {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.myheader{
+      padding-bottom: 69px;
+      display: flex;
+      flex-direction: column;
+}

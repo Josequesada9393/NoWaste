@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import FoodShared from '../FoodShared/FoodShared'
+import FoodShared from '../DashboardShareFood/FoodShared'
 import { LoginContext } from '../../LoginContext/LoginContext'
 import { useContext, useState } from 'react'
 import dining from '../../Style/dining.gif'
-import './FindFood.css'
+import './FindFoodPortal.css'
 import Map from '../MAP/Map'
 
 
@@ -18,7 +18,7 @@ const [itemsShared, setItemsShared] = useState({})
 
     <div>
       <div className='title br4 w-80 tc center b h2 w5 ma5'>
-        <img className="tc center ma1" style={{ borderRadius: '10px', opacity: 0.7, width: '80px' }} src={dining}></img>
+      <img className="tc center ma1" style={{ borderRadius: '10px', opacity: 0.7, width: '80px' }} src={dining}></img>
       <h1 className='tc center niceFont consolas'>Food near you</h1></div>
       <FoodShared itemsShared={itemsShared} setItemsShared={setItemsShared} />
       <Map itemsShared={itemsShared} />

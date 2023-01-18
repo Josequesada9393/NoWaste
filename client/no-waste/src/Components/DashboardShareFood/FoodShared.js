@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import FoodSharedItem from '../FoodSharedItem/FoodSharedItem'
+import FoodSharedItem from './FoodSharedItem'
 import {useContext} from 'react'
 import { findFood } from '../../ApiServices/ApiServices';
 import { LoginContext } from '../../LoginContext/LoginContext';

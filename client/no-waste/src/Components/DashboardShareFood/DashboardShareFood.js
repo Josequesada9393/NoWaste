@@ -1,19 +1,21 @@
 import React from 'react'
-import FoodItems from '../FoodItems/FoodItems'
+import FoodItems from '../DashboardFindFood/FoodItems'
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
-import AddFoodItem from '../AddFoodItem/AddFoodItem';
-import './ShareFood.css'
+import AddFoodItem from './AddFoodItemForm/AddFoodItem';
+import './DashboardShareFood.css'
 import { useState, useContext } from 'react';
 import { LoginContext } from '../../LoginContext/LoginContext';
-
+import dining from '../../Style/dining.gif'
 
 function ShareFood({}) {
-const {user} = useContext(LoginContext)
-
+  const { user } = useContext(LoginContext)
+  const name = user.name;
   return (
     <div className='shareFood'>
-            <div className='itemShare tc w-20 center ma1  pa2 br2 bg-black white grow o-80'><h4>{user.name.toUpperCase()}'S FOOD PORTAL</h4></div>
+        <div className='myheader br4 w-80 tc center b h2 w5 ma5'>
+        <img className="tc center ma1" style={{ borderRadius: '10px', opacity: 0.7, width: '80px' }} src={dining}></img>
 
+          <h1 className='tc center niceFont consolas'>Hi {name}, what do you want to share today?</h1></div>
       <AddFoodItem />
 
     <FoodItems/>

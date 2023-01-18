@@ -35,7 +35,6 @@ function AutoComplete({address, setAddress, coordinates, setCoordinates}) {
                 const className = suggestion.active
                   ? 'suggestion-item--active ma0 b autocomplete'
                   : 'suggestion-item autocomplete b ma0';
-                // inline style for demonstration purpose
                 const style = suggestion.active
                   ? { borderRadius: '1px', padding: '4px', cursor: 'pointer', backgroundColor: 'black', color: 'white'}
                   : { borderRadius: '1px', padding: '4px', cursor: 'pointer'};
@@ -51,9 +50,6 @@ function AutoComplete({address, setAddress, coordinates, setCoordinates}) {
                 );
               })}
             </div>
-      {/* <p>lat: {coordinates.lat}</p>
-      <p>long: {coordinates.lng}</p>
-      <p>Address: {address}</p> */}
           </div>
         )}
 
