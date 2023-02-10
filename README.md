@@ -26,10 +26,10 @@ NoWaste is an app aimed at helping people share food easily! Way too often, peop
 ## Getting started
 
 1. Clone the repo
-
+https://github.com/Josequesada9393/NoWaste.git
 ```
-git clone https://github.com/junagao/woofie.git
-cd woofie
+
+cd noWaste
 ```
 
 2. Install dependencies
