@@ -1,7 +1,7 @@
 # NoWaste
 
 <p align="center">
-img
+  <img src="Images/noWasteLogo.png" width="150" height="150"/>
 </p>
 
 
