@@ -14,9 +14,9 @@ NoWaste is an app aimed at helping people share food easily!
 ## Screenshots
 
 <p align="center">
-<img src="Images/Login.png" width="100" height="100"/>
-<img src="Images/FindFood.png"  width="100" height="100"/>
-<img src="Images/shareFood.png"  width="100" height="100"/>
+<img src="Images/Login.png" width="250" height="300"/>
+<img src="Images/FindFood.png"  width="250" height="300"/>
+<img src="Images/shareFood.png"  width="250" height="300"/>
 
 </p>
 
