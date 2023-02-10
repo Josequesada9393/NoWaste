@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useContext, useCallback } from 'react'
+import {  useContext } from 'react'
 import IconLogin from '../../Style/IconLogin'
 import { loginIn } from '../../ApiServices/ApiServices'
 import { LoginContext } from '../../LoginContext/LoginContext'
@@ -29,7 +29,7 @@ function Login({ }) {
               <legend className="f4 fw6 ph0 mh0 center"><h1>NoWaste</h1></legend>
               <IconLogin/>
               <div className="mt3">
-                  <label className="db fw6 lh-copy  f6" HtmlFor="email">Email</label>
+                  <label className="db fw6 lh-copy  f6" htmlFor="email">Email</label>
                   <input
                     className="pa2 input-reset ba hoverPink w-100"
                     type="email"
@@ -39,7 +39,7 @@ function Login({ }) {
                   />
                 </div>
                 <div className="mv3">
-                  <label className="db fw6 lh-copy  f6" HtmlFor="password">Password</label>
+                  <label className="db fw6 lh-copy  f6" htmlFor="password">Password</label>
                   <input
                     className="b pa2 input-reset ba bg-white hoverPink hover-white w-100"
                     type="password"

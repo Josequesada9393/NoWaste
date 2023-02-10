@@ -1,9 +1,6 @@
 .itemShare{
-  /* width: 100%; */
   width: 200px;
 }
-
-
 .contain {
   display: flex;
   flex-direction: column;

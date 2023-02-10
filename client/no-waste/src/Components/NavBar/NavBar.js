@@ -1,9 +1,7 @@
 import React from 'react'
 import { useContext } from 'react'
 import { LoginContext } from '../../LoginContext/LoginContext'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import About from '../About/About'
-
+import {  Link } from 'react-router-dom'
 
 function NavBar({ isLoggedIn }) {
   const {setLoggedIn} = useContext(LoginContext)

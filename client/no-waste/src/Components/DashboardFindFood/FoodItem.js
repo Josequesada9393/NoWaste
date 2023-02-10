@@ -2,8 +2,6 @@ import React from 'react'
 import moment from 'moment'
 import './FoodItem.css'
 import { deleteItemById } from '../../ApiServices/ApiServices'
-import { useState } from 'react'
-
 
 
 function FoodItem({ item, user, setUser}) {

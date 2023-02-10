@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 const cloudinary = require('../utils/cloudinary')
 
 
-
 exports.login = async (req, res) => {
   try {
     const loginUser = await user.findOne({ email: req.body.email, password: req.body.password })
@@ -40,19 +39,13 @@ exports.findFood = async (req, res) => {
   }
 }
 
-
 exports.addItem = async (req, res) => {
   const { title, date, address, photo, coordinates } = req.body
-
   try {
-
   const result = await cloudinary.uploader.upload(photo, {
       folder: "products",
-      // width: 300,
-      // crop: "scale"
     });
     const id = req.body.id;
-    // const post = await req.body;
     const post = {
       title: title,
       date: date,

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useContext, useEffect } from 'react'
 import './AddFoodItem.css'
-import { addItem, fetchUser } from '../../../ApiServices/ApiServices';
+import { addItem } from '../../../ApiServices/ApiServices';
 import { LoginContext } from '../../../LoginContext/LoginContext'
 import AutoComplete from '../../MAP/Autocomplete/AutoComplete';
 
@@ -13,13 +13,14 @@ function AddFoodItem() {
   const [photo, setPhoto] = useState('')
   const id = user._id;
 
- const [address, setAddress] = useState("")
+ const [address, setAddress] = useState('')
   const [coordinates, setCoordinates] = useState({
     lat: null,
     lng:null
   })
 
   const onSubmit = async (e) => {
+  if (title === '' || date === '' || photo === '' || address === '') return
   const dateNow = new Date(Date.now())
   const dateEntered = new Date(date)
     if (dateNow >= dateEntered) {
