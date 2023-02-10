@@ -48,15 +48,15 @@ nodemon
 
 ```
 ## Tech Stack
-[React](https://reactjs.org/)
-[NodeJS](https://nodejs.org/en/)
-[Express](https://expressjs.com/)
-[MongoDB](https://www.mongodb.com/)
-[Mongoose](https://mongoosejs.com/docs/)
+* [React](https://reactjs.org/)
+* [NodeJS](https://nodejs.org/en/)
+* [Express](https://expressjs.com/)
+* [MongoDB](https://www.mongodb.com/)
+* [Mongoose](https://mongoosejs.com/docs/)
 
-[Tachyons UI library](https://tachyons.io/)
-[Google Maps API](https://developers.google.com/maps?hl=en-419)
-[Cloudinary](https://cloudinary.com/users/register_free#gsc.tab=0)
+* [Tachyons UI library](https://tachyons.io/)
+* [Google Maps API](https://developers.google.com/maps?hl=en-419)
+* [Cloudinary](https://cloudinary.com/users/register_free#gsc.tab=0)
 
 
 ## Author
