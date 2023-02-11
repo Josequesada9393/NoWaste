@@ -59,4 +59,4 @@ nodemon
 
 
 ## Author
-Jose Alberto Gomez - [Github](https://github.com/Josequesada9393) - [LinkedIn](https://www.linkedin.com/in/jos%C3%A9-alberto-g%C3%B3mez-55aa63117/)
+Jose Alberto Gomez - [Github](https://github.com/Josequesada9393) - [LinkedIn](https://www.linkedin.com/in/jose-alberto-gomez/)
