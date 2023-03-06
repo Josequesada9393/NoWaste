@@ -1,12 +1,12 @@
 # NoWaste
 
 <p align="center">
-  <img src="Images/noWasteLogo.png" width="150" height="150"/>
+  <img src="Images/noWasteLogo.png" width="150" height="250"/>
 </p>
 
 
 
-NoWaste is an app aimed at helping people share food easily! Way too often, people cook too much or they simply buy food that they do not need and ends up going to waste. At NoWaste, we want to be an alternative for people to freely share what they have and reduce food waste while also helping people in their community. 
+NoWaste is an app aimed at helping people share food easily! Way too often, people cook too much or they simply buy food that they do not need and ends up going to waste. At NoWaste, we want to be an alternative for people to freely share what they have and reduce food waste while also helping people in their community.
 
 
 1. It allows people to register and upload food items with a brief description and a image to their profile.
