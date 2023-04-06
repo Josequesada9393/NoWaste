@@ -1,5 +1,4 @@
 
-import './App.css';
 import Login from './Components/Login/Login';
 import NavBar from './Components/NavBar/NavBar';
 import {BrowserRouter} from 'react-router-dom';
@@ -13,7 +12,6 @@ function App() {
 const [isLoggedIn, setLoggedIn] = useState(false)
 const [user, setUser] = useState({
 })
-
  return (
     <div className="App">
       <BrowserRouter>

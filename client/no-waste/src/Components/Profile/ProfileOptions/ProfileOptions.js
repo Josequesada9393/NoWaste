@@ -60,7 +60,7 @@ function ProfileOptions({ }) {
         </div>
       </div>
       <div className="pa3 pa4-ns dtc-ns v-mid">
-      <Link to="reviews"> <p className="no-underline f6 tc db w-100 b pv3 bg-animate bg-washed-blue hover-bg-light-yellow black br2">See your reviews!</p></Link>
+      <Link to="reviews"><p className="no-underline f6 tc db w-100 b pv3 bg-animate bg-washed-blue hover-bg-light-yellow black br2">See your reviews!</p></Link>
        </div>
     </div>
   </article>

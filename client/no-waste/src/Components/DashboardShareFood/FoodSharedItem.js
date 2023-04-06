@@ -4,7 +4,7 @@ import { useState } from 'react'
 import food from '../../Style/food.gif'
 import { addReview } from '../../ApiServices/ApiServices';
 
-function FoodSharedItem({ item, name, userThatShared, userThatPostsReview}) {
+function FoodSharedItem({ item, name, userThatShared, userThatPostsReview, key}) {
 
   const [showReview, setShowReview] = useState(false)
   const [isBooked, setIsBooked] = useState(false)

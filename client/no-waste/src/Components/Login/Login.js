@@ -25,7 +25,7 @@ function Login({ }) {
         <div id="alegreya" className="br2 ba dark-gray mv4 mw5 center">
           <main className="pa4 black-80 tc">
             <div className="measure">
-              <div id="register" className="ba b--transparent ph0 mh0">
+              <form id="register" className="ba b--transparent ph0 mh0">
               <legend className="f4 fw6 ph0 mh0 center"><h1>NoWaste</h1></legend>
               <IconLogin/>
               <div className="mt3">
@@ -48,7 +48,7 @@ function Login({ }) {
                     onChange={(e) => setUser({...user, ...{password: e.target.value}})}
                   />
                 </div>
-              </div>
+              </form>
               <div className="">
                 <input
                   className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"

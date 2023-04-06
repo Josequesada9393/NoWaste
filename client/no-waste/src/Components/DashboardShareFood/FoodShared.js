@@ -35,7 +35,7 @@ const { user } = useContext(LoginContext);
             userThatPostsReview={user}
             userThatShared={outerObject._id}
             name={outerObject.name}
-            key={foodItem._id || i}
+            key={foodItem._id}
             item={foodItem}
             outerObject={outerObject}
           />
