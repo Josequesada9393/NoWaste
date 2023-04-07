@@ -24,19 +24,21 @@ https://github.com/Josequesada9393/NoWaste.git
 cd NoWaste
 ```
 
-2. Install dependencies
+2. Start client at client folder
 ```
-npm install
-```
-4. Start client at client folder
-
-```
+cd client
+cd no-waste
+npm i
 npm start
+```
+3. Start server at server folder
 
 ```
-6. Start development server at server folder
-```
+cd server
+npm i
+npm start
 nodemon
+
 
 ```
 ## Tech Stack
