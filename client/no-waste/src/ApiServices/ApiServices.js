@@ -77,9 +77,12 @@ const deleteItemById = (userId, itemId) => {
 
 // new register system
 
-const registerUser = (name, email, password) => {
-  return fetch(`${url}/userRegister`, {
-    method: 'POST'
+const registerUser = async (currentUser) => {
+
+  return await fetch(`${url}/userRegister`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(currentUser)
   })
     .then(response => response.json())
     .then(response => response)

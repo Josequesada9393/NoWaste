@@ -22,7 +22,7 @@ router.get('/findFood/:id', user.findFood)
 router.delete('/deleteItem/:userId/:itemId', user.deleteById)
 
 // new login
-router.post('/userLogin', LoginController.UserLogin)
+// router.post('/userLogin', LoginController.UserLogin)
 router.post('/userRegister', LoginController.UserRegister)
 
 module.exports = router

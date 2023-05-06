@@ -5,8 +5,9 @@ import {BrowserRouter} from 'react-router-dom';
 import { LoginContext } from './State/LoginContext';
 import { useContext, useState } from 'react';
 import Profile from './Components/Profile/Profile';
-import { AuthContext } from './State/AuthContext';
+import { AuthProvider } from './State/AuthContext';
 import LoginUpdate from './Components/Login/LoginUpdate';
+
 
 function App() {
 
@@ -15,20 +16,21 @@ const [isLoggedIn, setLoggedIn] = useState(false)
 const [user, setUser] = useState({
 })
 
-const currentUser = useContext(AuthContext)
 
  return (
     <div className="App">
      <BrowserRouter>
-      <LoginContext.Provider value={{ user, setUser, setLoggedIn }}>
+       <AuthProvider>
+       <LoginContext.Provider value={{ user, setUser, setLoggedIn }}>
         <NavBar isLoggedIn={isLoggedIn} />
        {isLoggedIn ? <Profile/> :
            (
              <>
         <Login />
         <LoginUpdate/></>
-           )}
-       </LoginContext.Provider>
+             )}
+         </LoginContext.Provider>
+         </AuthProvider>
      </BrowserRouter>
   </div>
   );

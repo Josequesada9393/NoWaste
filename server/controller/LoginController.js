@@ -20,20 +20,23 @@ const bcrypt = require('bcrypt')
 // }
 
 exports.UserRegister = async (req, res) => {
-
   try {
     const { name, email, password } = await req.body;
-
     const hashedPassword = await bcrypt.hash(password, 10);
-
-    const newUser = await UserModel.create({
+    const newUser = await UserModel.find({ name: name, email: email })
+    if (!newUser.length) {
+    await UserModel.create({
       name: name,
       email: email,
       password: hashedPassword
     });
-
+      const newRegisteredUser = await UserModel.find({ name: name, email: email });
+      res.send(newRegisteredUser);
+      console.log('new registered user', name)
+      return
+    }
+    console.log(`user ${name.toUpperCase()} already registered`)
     res.send(newUser)
-
 
   } catch (error) {
     res.status(500).send({
