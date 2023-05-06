@@ -89,4 +89,16 @@ const registerUser = async (currentUser) => {
   .catch(error => console.log(error, 'user not registered'))
 }
 
- export {loginIn, addItem, getItems, findFood, deleteItemById, addReview, registerUser}
+const loginUser = async (email, password) => {
+
+  return await fetch(`${url}/userLogin`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(email, password)
+  })
+    .then(response => response.json())
+    .then(response => response)
+    .catch(error => console.log(error, 'user not logged in'))
+}
+
+ export {loginIn, addItem, getItems, findFood, deleteItemById, addReview, registerUser, loginUser}
