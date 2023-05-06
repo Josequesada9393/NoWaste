@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext } from 'react'
-import { LoginContext } from '../../LoginContext/LoginContext'
+import { LoginContext } from '../../State/LoginContext'
 import {  Link } from 'react-router-dom'
 
 function NavBar({ isLoggedIn }) {

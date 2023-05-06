@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import FoodSharedItem from './FoodSharedItem'
 import {useContext} from 'react'
 import { findFood } from '../../ApiServices/ApiServices';
-import { LoginContext } from '../../LoginContext/LoginContext';
+import { LoginContext } from '../../State/LoginContext';
 import "./FoodShared.css"
 
 

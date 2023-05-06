@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import AddFoodItem from './AddFoodItemForm/AddFoodItem';
 import './DashboardShareFood.css'
 import {useContext } from 'react';
-import { LoginContext } from '../../LoginContext/LoginContext';
+import { LoginContext } from '../../State/LoginContext';
 import dining from '../../Style/dining.gif'
 
 function ShareFood({}) {

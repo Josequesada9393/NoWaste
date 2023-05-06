@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useContext, useEffect } from 'react'
 import './AddFoodItem.css'
 import { addItem } from '../../../ApiServices/ApiServices';
-import { LoginContext } from '../../../LoginContext/LoginContext'
+import { LoginContext } from '../../../State/LoginContext'
 import AutoComplete from '../../MAP/Autocomplete/AutoComplete';
 
 function AddFoodItem() {

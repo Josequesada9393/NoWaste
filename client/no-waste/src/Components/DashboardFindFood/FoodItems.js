@@ -1,6 +1,6 @@
 import React from 'react'
 import FoodItem from './FoodItem'
-import { LoginContext } from '../../LoginContext/LoginContext'
+import { LoginContext } from '../../State/LoginContext'
 import './FoodItems.css'
 import {useContext } from 'react'
 
