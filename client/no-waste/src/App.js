@@ -6,6 +6,7 @@ import { LoginContext } from './State/LoginContext';
 import { useContext, useState } from 'react';
 import Profile from './Components/Profile/Profile';
 import { AuthContext } from './State/AuthContext';
+import LoginUpdate from './Components/Login/LoginUpdate';
 
 function App() {
 
@@ -14,15 +15,19 @@ const [isLoggedIn, setLoggedIn] = useState(false)
 const [user, setUser] = useState({
 })
 
-  const currentUser = useContext(AuthContext)
-  
+const currentUser = useContext(AuthContext)
+
  return (
     <div className="App">
      <BrowserRouter>
       <LoginContext.Provider value={{ user, setUser, setLoggedIn }}>
         <NavBar isLoggedIn={isLoggedIn} />
        {isLoggedIn ? <Profile/> :
-        <Login />}
+           (
+             <>
+        <Login />
+        <LoginUpdate/></>
+           )}
        </LoginContext.Provider>
      </BrowserRouter>
   </div>

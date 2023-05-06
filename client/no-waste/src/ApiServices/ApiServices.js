@@ -73,4 +73,17 @@ const deleteItemById = (userId, itemId) => {
   });
 }
 
- export {loginIn, addItem, getItems, findFood, deleteItemById, addReview}
+
+
+// new register system
+
+const registerUser = (name, email, password) => {
+  return fetch(`${url}/userRegister`, {
+    method: 'POST'
+  })
+    .then(response => response.json())
+    .then(response => response)
+  .catch(error => console.log(error, 'user not registered'))
+}
+
+ export {loginIn, addItem, getItems, findFood, deleteItemById, addReview, registerUser}

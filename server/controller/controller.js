@@ -56,7 +56,6 @@ exports.addItem = async (req, res) => {
       },
       coordinates: coordinates
     }
-    console.log(post.photo)
     if (!post.title || !post.date || !post.address || !post.photo.url) {
       return res.status(400).send('enter all fields')
     }
