@@ -1,13 +1,15 @@
 import React from 'react'
 import { useContext } from 'react'
 import { LoginContext } from '../../State/LoginContext'
-import {  Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../State/AuthContext';
 
 function NavBar({ isLoggedIn }) {
-  const {setLoggedIn} = useContext(LoginContext)
+  const { setLoggedIn } = useContext(LoginContext)
+  const {isAuth, logout} = useContext(AuthContext)
   return (
   <div>
-  {isLoggedIn === false ? (
+  {!isAuth ? (
  <></>
   ) : (
     <nav className="pa3 pa4-ns shadow-3 light-pink">
@@ -22,7 +24,7 @@ function NavBar({ isLoggedIn }) {
       </a></Link>
       <Link to="/about" ><a className="link dim grow black f6 f5-ns dib mr3" title="About">About</a></Link>
       <button
-        onClick={() => setLoggedIn(false)}
+        onClick={logout}
         className="link dim black f6 f5-ns dib mr3"
         title="logout"
       >

@@ -1,23 +1,27 @@
 import React from 'react'
-import {  useContext } from 'react'
+import { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
 import IconLogin from '../../Style/IconLogin'
 import { loginIn } from '../../ApiServices/ApiServices'
 import { LoginContext } from '../../State/LoginContext'
+import { AuthContext } from '../../State/AuthContext'
+import { useNavigate } from 'react-router-dom'
+import { loginUser } from '../../ApiServices/ApiServices'
 
 function Login({ }) {
 
+  const { setCurrentUser, currentUser, isAuth, logout } = useContext(AuthContext);
+  const [logUser, setLogUser] = useState(null);
+  const navigate = useNavigate()
 
-  const {setUser, user, setLoggedIn} = useContext(LoginContext)
-  const onSubmit = (event) => {
-  event.preventDefault();
-  loginIn(user.email, user.password).then((data) => {
-      setUser(data)
-      setLoggedIn(true)
-    })
-    .catch((error) => {
-    console.log('there was an error', error)
-  })
-}
+    const handleLogin = async (e) => {
+    e.preventDefault();
+    const loggedUser = await loginUser(logUser);
+    if (loggedUser) {
+      setCurrentUser(loggedUser);
+      navigate('/')
+    }
+  }
 
   return (
     <>
@@ -35,7 +39,7 @@ function Login({ }) {
                     type="email"
                     name="email"
                     id="email"
-                    onChange={(e) => setUser({...user, ...{email: e.target.value}})}
+                     onChange={(e) => setLogUser({...logUser, ...{email: e.target.value}})}
                   />
                 </div>
                 <div className="mv3">
@@ -45,18 +49,20 @@ function Login({ }) {
                     type="password"
                     name="password"
                     id="password"
-                    onChange={(e) => setUser({...user, ...{password: e.target.value}})}
+               onChange={(e) => setLogUser({...logUser, ...{password: e.target.value}})}
                   />
                 </div>
               </form>
               <div className="">
                 <input
                   className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-                  type="submit" value="Login" onClick={onSubmit} />
+                  type="submit" value="Login" onClick={handleLogin} />
               </div>
 
               <div className="lh-copy mt3">
-                <p className="f6 link dim black db pointer">Register</p>
+
+          <Link to="../register"><p className="f6 link dim black db pointer">Register</p></Link>
+
               </div>
             </div>
           </main>
