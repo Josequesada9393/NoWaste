@@ -8,13 +8,13 @@ import ReviewsPortal from '../DashboardReviews/ReviewsPortal'
 function Profile({}) {
   return (
 <div>
-      <Routes>
+      {/* <Routes>
       <Route path="/" element={<ProfileOptions/>}/>
       <Route path="/sharefood" element={<ShareFood/>}/>
       <Route path="/findfood" element={<FindFood />} />
       <Route path="/reviews" element={<ReviewsPortal />} />
       <Route path="/about" element={<About />} />
-      </Routes>
+      </Routes> */}
     </div>
   )
 }

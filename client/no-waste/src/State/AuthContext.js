@@ -25,7 +25,6 @@ export const AuthProvider = ({ children }) => {
   }
 
   useEffect(() => {
-
     if (currentUser) {
       cookies.set("userToken", currentUser.token);
       setIsAuth(true)

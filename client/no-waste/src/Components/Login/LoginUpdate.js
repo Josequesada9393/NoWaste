@@ -16,7 +16,8 @@ function LoginUpdate({ }) {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    const newUser = await registerUser(currentUser);
+    setCurrentUser(logUser)
+    await registerUser(currentUser);
   }
 
   const handleLogin = async (e) => {
@@ -50,18 +51,18 @@ function LoginUpdate({ }) {
         <label>Name</label>
         <input
           type='text'
-       onChange={(e) => setCurrentUser({...currentUser, ...{name: e.target.value}})}
+       onChange={(e) => setLogUser({...currentUser, ...{name: e.target.value}})}
 
         ></input>
         <label>Email</label>
         <input
           type='text'
-         onChange={(e) => setCurrentUser({...currentUser, ...{email: e.target.value}})}
+         onChange={(e) => setLogUser({...currentUser, ...{email: e.target.value}})}
 ></input>
         <label>Password</label>
         <input
           type='password'
-          onChange={(e) => setCurrentUser({...currentUser, ...{password: e.target.value}})}
+          onChange={(e) => setLogUser({...currentUser, ...{password: e.target.value}})}
 
         ></input>
         <button type='submit' onClick={handleRegister}>Register</button>
