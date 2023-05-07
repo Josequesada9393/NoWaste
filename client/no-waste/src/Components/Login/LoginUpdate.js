@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {  useContext, useState } from 'react'
 import IconLogin from '../../Style/IconLogin'
 import { loginIn, loginUser } from '../../ApiServices/ApiServices'
 import { LoginContext } from '../../State/LoginContext'
 import { AuthContext } from '../../State/AuthContext';
 import { registerUser } from '../../ApiServices/ApiServices'
+import Cookies from "universal-cookie";
+import Test from './Test';
+const cookies = new Cookies();
 
 function LoginUpdate({ }) {
-  const { setCurrentUser, currentUser } = useContext(AuthContext);
+  const { setCurrentUser, currentUser, auth, logout, authCheck } = useContext(AuthContext);
   const [logUser, setLogUser] = useState(null)
+
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -18,12 +22,17 @@ function LoginUpdate({ }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     const loggedUser = await loginUser(logUser);
-    console.log(loggedUser)
+    if (loggedUser) {
+      cookies.set("userToken", loggedUser.token);
+      setCurrentUser(loggedUser)
+
+    }
   }
+
 
   return (
     <>
-
+      {auth && <Test/>}
     <form className='tc pa3'>
        <p>new login</p>
         <label>Email</label>
@@ -60,6 +69,8 @@ function LoginUpdate({ }) {
         <button type='submit' onClick={handleRegister}>Register</button>
     </form>
 
+      <button className='red'
+      onClick={logout}>LOGOUT</button>
       </>
   )
 }

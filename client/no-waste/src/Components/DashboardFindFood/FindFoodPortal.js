@@ -9,7 +9,8 @@ import Map from '../MAP/Map'
 
 function FindFood({ }) {
 
-const [itemsShared, setItemsShared] = useState({})
+  const [itemsShared, setItemsShared] = useState({});
+
 
   return (
 

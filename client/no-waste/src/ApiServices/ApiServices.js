@@ -85,7 +85,10 @@ const registerUser = async (currentUser) => {
     body: JSON.stringify(currentUser)
   })
     .then(response => response.json())
-    .then(response => response)
+    .then(response => {
+      alert('Registration successful')
+      return response
+    })
   .catch(error => console.log(error, 'user not registered'))
 }
 

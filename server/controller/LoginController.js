@@ -14,9 +14,7 @@ exports.UserLogin = async (req, res) => {
     if (!ExistingUser.length) {
       return `user ${email} not found`
     }
-
     let passwordCheck = await bcrypt.compare(password, ExistingUser[0].password);
-
     if (passwordCheck) {
       const token = jwt.sign({
         userId: ExistingUser[0]._id,
