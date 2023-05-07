@@ -17,24 +17,31 @@ export const AuthContext = createContext({
 });
 
 export const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState({});
-  const [auth, setAuth] = useState(false)
+  const [currentUser, setCurrentUser] = useState(null);
+  const [isAuth, setIsAuth] = useState(false)
 
   const logout = () => {
-    cookies.remove("userToken");
     setCurrentUser(null)
   }
 
-  const authCheck = async () => {
-    // if (await currentUser.token && await cookies.get("userToken") === await currentUser.token) {
-    //   setAuth(true)
-    // } setAuth(false)
-    console.log(currentUser.token)
-    console.log(cookies.get("userToken"))
+  useEffect(() => {
 
-  }
+    if (currentUser) {
+      cookies.set("userToken", currentUser.token);
+      setIsAuth(true)
+      console.log(currentUser)
+      console.log(cookies.get("userToken"));
+    } else {
+      cookies.remove("userToken");
+      setIsAuth(false)
+      console.log(currentUser)
+      console.log(cookies.get("userToken"))
+    }
+  }, [currentUser])
 
-  const value = { currentUser, setCurrentUser, logout, authCheck, auth, setAuth };
+
+
+  const value = { currentUser, setCurrentUser, logout, isAuth, setIsAuth};
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

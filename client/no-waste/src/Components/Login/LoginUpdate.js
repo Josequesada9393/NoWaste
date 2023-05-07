@@ -10,7 +10,7 @@ import Test from './Test';
 const cookies = new Cookies();
 
 function LoginUpdate({ }) {
-  const { setCurrentUser, currentUser, auth, logout, authCheck } = useContext(AuthContext);
+  const { setCurrentUser, currentUser, isAuth, logout } = useContext(AuthContext);
   const [logUser, setLogUser] = useState(null)
 
 
@@ -23,16 +23,14 @@ function LoginUpdate({ }) {
     e.preventDefault();
     const loggedUser = await loginUser(logUser);
     if (loggedUser) {
-      cookies.set("userToken", loggedUser.token);
-      setCurrentUser(loggedUser)
-
+      setCurrentUser(loggedUser);
     }
   }
 
 
   return (
     <>
-      {auth && <Test/>}
+      {isAuth && <Test/>}
     <form className='tc pa3'>
        <p>new login</p>
         <label>Email</label>
