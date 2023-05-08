@@ -6,20 +6,15 @@ import ShareFood from './Components/DashboardShareFood/DashboardShareFood';
 import FindFood from './Components/DashboardFindFood/FindFoodPortal';
 import About from './Components/About/About';
 import ReviewsPortal from './Components/DashboardReviews/ReviewsPortal';
-import { LoginContext } from './State/LoginContext';
-import { useContext, useState } from 'react';
-import Profile from './Components/Profile/Profile';
-import { AuthContext, AuthProvider } from './State/AuthContext';
-import LoginUpdate from './Components/Login/LoginUpdate';
-// import PrivateRoute from './Components/RouteUtils/ProtectedRoute';
+import { useContext } from 'react';
+import { AuthContext } from './State/AuthContext';
 import ProfileOptions from './Components/Profile/ProfileOptions/ProfileOptions';
-import { Navigate } from 'react-router-dom';
 import Register from './Components/Register/Register';
 
 
 function App() {
 
-  const { setCurrentUser, currentUser, isAuth, logout } = useContext(AuthContext);
+  const {isAuth} = useContext(AuthContext);
  return (
     <div className="App">
      <BrowserRouter>
@@ -40,4 +35,3 @@ function App() {
 export default App;
 
 
-      // <PrivateRoute exact path='/dashboard' component={DashboardPage} />

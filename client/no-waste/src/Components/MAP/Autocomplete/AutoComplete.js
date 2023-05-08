@@ -1,5 +1,5 @@
 import React, { Children } from 'react'
-import PlacesAutocomplete from 'react-places-autocomplete';
+import PlacesAutocomplete, {Autocomplete} from 'react-places-autocomplete';
 import { useState } from 'react';
 import { geocodeByAddress, geocodeByPlaceId, getLatLng } from 'react-places-autocomplete'
 
@@ -15,7 +15,7 @@ function AutoComplete({address, setAddress, coordinates, setCoordinates}) {
   return (
     <div>
 
-<PlacesAutocomplete
+      <PlacesAutocomplete
         value={address}
         onChange={setAddress}
         onSelect={handleSelect}

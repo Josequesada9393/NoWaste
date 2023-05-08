@@ -3,15 +3,16 @@ import { useState, useContext, useEffect } from 'react'
 import './AddFoodItem.css'
 import { addItem } from '../../../ApiServices/ApiServices';
 import { LoginContext } from '../../../State/LoginContext'
-import AutoComplete from '../../MAP/Autocomplete/AutoComplete';
+// import AutoComplete from '../../MAP/Autocomplete/AutoComplete';
+import AutoComplete from 'react-google-autocomplete'
 
 function AddFoodItem() {
 
-  const { setUser, user } = useContext(LoginContext)
+  // const { setUser, user } = useContext(LoginContext)
   const [title, setTitle] = useState('')
   const [date, setDate] = useState('')
   const [photo, setPhoto] = useState('')
-  const id = user._id;
+  // const id = user._id;
 
  const [address, setAddress] = useState('')
   const [coordinates, setCoordinates] = useState({
@@ -29,7 +30,7 @@ function AddFoodItem() {
     e.preventDefault();
     const response = await addItem(id, title, date, photo, address, coordinates)
     console.log(response)
-    setUser(response)
+    // setUser(response)
       setTitle('');
       setDate('');
       setPhoto('');
@@ -61,7 +62,21 @@ function AddFoodItem() {
         onChange={(e) => setDate(e.target.value)} required/>
         <input className='formInput ma1 pa3 br2 hover-bg-dark-blue inputFile' type="file" title="" name="photo"
         onChange={handleImage} required/>
-      <AutoComplete address={address} coordinates={coordinates} setAddress={setAddress} setCoordinates={setCoordinates} />
+      {/* <AutoComplete address={address} coordinates={coordinates} setAddress={setAddress} setCoordinates={setCoordinates} /> */}
+
+      <AutoComplete
+  apiKey={'AIzaSyBQWlb7R2WqmHa_UqFegIPdyFXs3hbYz3M'}
+  style={{ width: "90%" }}
+  onPlaceSelected={(place) => {
+    console.log(place);
+  }}
+  options={{
+    types: ["(regions)"],
+    componentRestrictions: { country: "ru" },
+  }}
+  defaultValue="Amsterdam"
+/>;
+
 
     </div>
   )

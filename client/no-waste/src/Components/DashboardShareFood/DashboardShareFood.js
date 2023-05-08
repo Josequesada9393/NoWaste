@@ -4,12 +4,12 @@ import {Link} from 'react-router-dom'
 import AddFoodItem from './AddFoodItemForm/AddFoodItem';
 import './DashboardShareFood.css'
 import {useContext } from 'react';
-import { LoginContext } from '../../State/LoginContext';
+import { AuthContext } from '../../State/AuthContext';
 import dining from '../../Style/dining.gif'
 
 function ShareFood({}) {
-  const { user } = useContext(LoginContext)
-  const name = user.name;
+  const { currentUser } = useContext(AuthContext)
+  const name = currentUser.name;
   return (
     <div className='shareFood'>
         <div className='myheader br4 w-80 tc center b h2 w5 ma5'>
@@ -17,7 +17,7 @@ function ShareFood({}) {
          <h1 className='tc center niceFont consolas'>Hi {name}, what do you want to share today?</h1></div>
       <AddFoodItem />
 
-    <FoodItems/>
+    {/* <FoodItems/> */}
    <section className="ph3 ph5-ns pv5">
   <article className="mw8 br4 center br2 ba light-pink grow">
     <div className="dt-ns dt--fixed-ns w-100">

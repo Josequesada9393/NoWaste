@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link} from 'react-router-dom'
 import { useContext } from 'react'
-import { LoginContext } from '../../../State/LoginContext'
 import Icon from '../../../Style/Icon'
+import { AuthContext } from '../../../State/AuthContext'
 function ProfileOptions({ }) {
-    // const {user} = useContext(LoginContext)
+  const {currentUser} = useContext(AuthContext)
 
   return (
     <div>
       <section className="ph3 ph5-ns pv1 shadow-5 tc center">
-        <h1>Welcome back <h2 className='b grow'>{'user.name'}</h2></h1>
+        <h1>Welcome back <h2 className='b grow'>{currentUser.name}</h2></h1>
         <article className="mw8 br4 center br2 ba">
           <div className="dt-ns dt--fixed-ns w-100">
 <Icon/>
