@@ -5,12 +5,15 @@ import App from './App';
 import 'tachyons'
 import reportWebVitals from './reportWebVitals';
 import { AuthProvider } from './State/AuthContext';
+import { FoodItemsProvider } from './State/ItemsContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <FoodItemsProvider>
     <AuthProvider>
       <App />
       </AuthProvider>
+      </FoodItemsProvider>
   </React.StrictMode>
 );
 

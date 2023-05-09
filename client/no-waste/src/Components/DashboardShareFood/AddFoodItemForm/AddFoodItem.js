@@ -2,15 +2,11 @@ import React from 'react'
 import { useState, useContext, useEffect } from 'react'
 import './AddFoodItem.css'
 import { addItem } from '../../../ApiServices/ApiServices';
-import { LoginContext } from '../../../State/LoginContext'
 import {AuthContext} from '../../../State/AuthContext'
-// import AutoComplete from '../../MAP/Autocomplete/AutoComplete';
 import AutoComplete from 'react-google-autocomplete'
 
 function AddFoodItem() {
   const { currentUser } = useContext(AuthContext);
-
-  // const react-google-autocomplete{ setUser, user } = useContext(LoginContext)
   const [title, setTitle] = useState('')
   const [date, setDate] = useState('')
   const [photo, setPhoto] = useState('')
@@ -34,9 +30,7 @@ function AddFoodItem() {
     } else {
 
       e.preventDefault();
-    const response = await addItem(id, title, date, ownerName, photo, address, coordinates)
-    console.log(response)
-    // setUser(response)
+    await addItem(id, title, date, ownerName, photo, address, coordinates)
       setTitle('');
       setDate('');
       setPhoto('');
@@ -82,8 +76,6 @@ function AddFoodItem() {
         }
   }
 />
-
-
     </div>
   )
 }

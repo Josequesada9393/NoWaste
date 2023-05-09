@@ -30,19 +30,20 @@ exports.addReview = async (req, res) => {
 }
 
 
-exports.findFood = async (req, res) => {
-  try {
-    const idToExclude = req.params.id;
-    const users = await user.find({ _id: { $ne: idToExclude } })
-    res.send(users)
-  } catch (error) {
-    console.log(errr, 'no food found')
-  }
-}
+// exports.findFood = async (req, res) => {
+//   try {
+//     const idToExclude = req.params.id;
+//     const users = await user.find({ _id: { $ne: idToExclude } })
+//     res.send(users)
+//   } catch (error) {
+//     console.log(errr, 'no food found')
+//   }
+// }
 
 //updated
 exports.addItem = async (req, res) => {
-  const { title, date, address, photo, coordinates, id, ownerName } = await req.body
+  const { title, date, address, photo, coordinates, id, ownerName } = await req.body;
+  console.log(id)
   try {
   const result = await cloudinary.uploader.upload(photo, {
       folder: "products",
@@ -61,7 +62,7 @@ exports.addItem = async (req, res) => {
       address: address,
       photo: photoItem,
       coordinates: coordinates,
-      OwnerId: id,
+      ownerId: id,
       ownerName: ownerName
     }
 
@@ -71,6 +72,14 @@ await PostModel.create(newPost)
     console.log(error, "item not added")
   }
 }
+
+exports.findAllOwnerItems = async (req, res) => {
+  const items = await PostModel.find({});
+  console.log('hello')
+  console.log(items)
+  res.send(items)
+}
+
 
 exports.deleteById = async (req, res) => {
   try {

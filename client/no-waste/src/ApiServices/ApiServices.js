@@ -15,8 +15,8 @@ const url = "http://localhost:4000"
       })
  }
 
-const findFood = async (id) => {
-  return fetch(`${url}/findFood/${id}`)
+const findFood = async () => {
+  return fetch(`${url}/findFood`)
     .then(response => response.json())
     .then(data => {
      return data

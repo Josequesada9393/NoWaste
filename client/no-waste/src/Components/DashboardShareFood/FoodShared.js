@@ -32,12 +32,8 @@ const { user } = useContext(LoginContext);
         );
         return (
           <FoodSharedItem
-            userThatPostsReview={user}
-            userThatShared={outerObject._id}
-            name={outerObject.name}
-            key={foodItem._id}
-            item={foodItem}
-            outerObject={outerObject}
+            item={item}
+            key={item._id}
           />
         );
       })

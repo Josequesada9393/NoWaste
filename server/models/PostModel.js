@@ -21,7 +21,7 @@ const postSchema = new Schema({
         lat: String,
         lng: String
   },
-  ownerId: Number,
+  ownerId: String,
   ownerName: String
 },
   {collection: 'Posts'}

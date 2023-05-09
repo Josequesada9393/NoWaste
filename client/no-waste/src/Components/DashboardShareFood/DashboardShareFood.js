@@ -17,7 +17,8 @@ function ShareFood({}) {
          <h1 className='tc center niceFont consolas'>Hi {name}, what do you want to share today?</h1></div>
       <AddFoodItem />
 
-    {/* <FoodItems/> */}
+      <FoodItems/>
+
    <section className="ph3 ph5-ns pv5">
   <article className="mw8 br4 center br2 ba light-pink grow">
     <div className="dt-ns dt--fixed-ns w-100">
