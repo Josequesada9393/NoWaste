@@ -23,7 +23,7 @@ export const FoodItemsProvider = ({ children }) => {
     setFoodItems(items)
   }
   getItems()
-  }, [])
+  }, [foodItems])
 
 
 
