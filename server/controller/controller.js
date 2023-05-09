@@ -1,6 +1,7 @@
 const user = require('../models/models')
 const mongoose = require('mongoose')
-const cloudinary = require('../utils/cloudinary')
+const cloudinary = require('../utils/cloudinary');
+const PostModel = require('../models/PostModel')
 
 
 exports.login = async (req, res) => {
@@ -39,32 +40,32 @@ exports.findFood = async (req, res) => {
   }
 }
 
+//updated
 exports.addItem = async (req, res) => {
-  const { title, date, address, photo, coordinates, id } = req.body
+  const { title, date, address, photo, coordinates, id, ownerName } = await req.body
   try {
   const result = await cloudinary.uploader.upload(photo, {
       folder: "products",
     });
-    const userId = req.body.id;
-    const post = {
-      title: title,
-      date: date,
-      userId: userId,
-      address: address,
-      photo: {
-        public_id: result.public_id,
-        url: result.secure_url
-      },
-      coordinates: coordinates
+
+    const photoItem = {
+      public_id: result.public_id,
+      url: result.secure_url
     }
-    if (!post.title || !post.date || !post.address || !post.photo.url) {
+    if (!title || !date || !address || !photoItem.url) {
       return res.status(400).send('enter all fields')
     }
-    const newPost =
-   await user.updateOne({ _id: id }, { $push: { posts: post } })
-    const newUser = await user.findOne({ _id: id })
-    newUser.posts = newUser.posts.sort((a, b) => a.date - b.date)
-    res.send(newUser)
+     const newPost = {
+      title: title,
+      date: date,
+      address: address,
+      photo: photoItem,
+      coordinates: coordinates,
+      OwnerId: id,
+      ownerName: ownerName
+    }
+
+await PostModel.create(newPost)
   } catch (error) {
     res.sendStatus(500)
     console.log(error, "item not added")

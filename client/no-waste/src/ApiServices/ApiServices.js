@@ -48,10 +48,10 @@ const getItems = async () => {
         });
 }
 
-const addItem = (id, title, date, photo, address, coordinates) => {
+const addItem = (id, title, date, ownerName, photo, address, coordinates) => {
   return fetch(`${url}/addItem`, {
     method: 'PUT',
-    body: JSON.stringify({id, title, date, photo, address, coordinates }),
+    body: JSON.stringify({id, title, date, ownerName, photo, address, coordinates }),
     headers: { 'Content-Type': 'application/json' },
   })
     .then(response => response.json())

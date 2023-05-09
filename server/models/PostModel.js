@@ -4,12 +4,10 @@ const Schema = mongoose.Schema;
 
 
 const postSchema = new Schema({
-  userId: Number,
-  createdBy: String,
   title: String,
   date: Date,
   address: String,
-  photo: {
+  photo:{
       public_id: {
        type: String,
        required: true
@@ -18,15 +16,20 @@ const postSchema = new Schema({
         type: String,
           required: true
         }
-      },
-      coordinates: [{
+  },
+  coordinates:{
         lat: String,
         lng: String
-      }]
-})
+  },
+  ownerId: Number,
+  ownerName: String
+},
+  {collection: 'Posts'}
+)
 
+const PostModel = mongoose.model('PostModel', postSchema);
 
-
+module.exports = PostModel;
 
 
 

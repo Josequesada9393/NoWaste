@@ -15,27 +15,26 @@ function AddFoodItem() {
   const [date, setDate] = useState('')
   const [photo, setPhoto] = useState('')
   const id = currentUser.id;
+  const ownerName = currentUser.name;
+  console.log('ownerName', ownerName)
 
  const [address, setAddress] = useState('')
   const [coordinates, setCoordinates] = useState({
     lat: null,
     lng: null
   })
-
-  console.log('new coordinates', coordinates)
-  console.log(currentUser, 'uss');
-  console.log(address, 'address')
   const onSubmit = async (e) => {
-          console.log( title, date, id, coordinates)
+    console.log(title, date, photo, address)
+    if (title === '' || date === '' || photo === '' || address === '') return
 
-  if (title === '' || date === '' || photo === '' || address === '') return
   const dateNow = new Date(Date.now())
   const dateEntered = new Date(date)
     if (dateNow >= dateEntered) {
        alert("you can't go back in time");
-   } else {
+    } else {
+
       e.preventDefault();
-    const response = await addItem(id, title, date, photo, address, coordinates)
+    const response = await addItem(id, title, date, ownerName, photo, address, coordinates)
     console.log(response)
     // setUser(response)
       setTitle('');
