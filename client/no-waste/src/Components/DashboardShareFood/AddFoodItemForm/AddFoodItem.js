@@ -3,31 +3,38 @@ import { useState, useContext, useEffect } from 'react'
 import './AddFoodItem.css'
 import { addItem } from '../../../ApiServices/ApiServices';
 import { LoginContext } from '../../../State/LoginContext'
+import {AuthContext} from '../../../State/AuthContext'
 // import AutoComplete from '../../MAP/Autocomplete/AutoComplete';
 import AutoComplete from 'react-google-autocomplete'
 
 function AddFoodItem() {
+  const { currentUser } = useContext(AuthContext);
 
-  // const { setUser, user } = useContext(LoginContext)
+  // const react-google-autocomplete{ setUser, user } = useContext(LoginContext)
   const [title, setTitle] = useState('')
   const [date, setDate] = useState('')
   const [photo, setPhoto] = useState('')
-  // const id = user._id;
+  const id = currentUser.id;
 
  const [address, setAddress] = useState('')
   const [coordinates, setCoordinates] = useState({
     lat: null,
-    lng:null
+    lng: null
   })
 
+  console.log('new coordinates', coordinates)
+  console.log(currentUser, 'uss');
+  console.log(address, 'address')
   const onSubmit = async (e) => {
+          console.log( title, date, id, coordinates)
+
   if (title === '' || date === '' || photo === '' || address === '') return
   const dateNow = new Date(Date.now())
   const dateEntered = new Date(date)
     if (dateNow >= dateEntered) {
        alert("you can't go back in time");
    } else {
-    e.preventDefault();
+      e.preventDefault();
     const response = await addItem(id, title, date, photo, address, coordinates)
     console.log(response)
     // setUser(response)
@@ -65,17 +72,17 @@ function AddFoodItem() {
       {/* <AutoComplete address={address} coordinates={coordinates} setAddress={setAddress} setCoordinates={setCoordinates} /> */}
 
       <AutoComplete
-  apiKey={'AIzaSyBQWlb7R2WqmHa_UqFegIPdyFXs3hbYz3M'}
-  style={{ width: "90%" }}
-  onPlaceSelected={(place) => {
-    console.log(place);
-  }}
-  options={{
-    types: ["(regions)"],
-    componentRestrictions: { country: "ru" },
-  }}
-  defaultValue="Amsterdam"
-/>;
+        className='formInput ma1 pa2 br2 hover-bg-dark-blue'
+        apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+        onPlaceSelected={(place) => {
+          setCoordinates({
+          lat: place.geometry.location.lat(),
+            lng: place.geometry.location.lng()
+          })
+          setAddress(place.formatted_address)
+        }
+  }
+/>
 
 
     </div>

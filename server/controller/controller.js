@@ -40,15 +40,16 @@ exports.findFood = async (req, res) => {
 }
 
 exports.addItem = async (req, res) => {
-  const { title, date, address, photo, coordinates } = req.body
+  const { title, date, address, photo, coordinates, id } = req.body
   try {
   const result = await cloudinary.uploader.upload(photo, {
       folder: "products",
     });
-    const id = req.body.id;
+    const userId = req.body.id;
     const post = {
       title: title,
       date: date,
+      userId: userId,
       address: address,
       photo: {
         public_id: result.public_id,
@@ -59,6 +60,7 @@ exports.addItem = async (req, res) => {
     if (!post.title || !post.date || !post.address || !post.photo.url) {
       return res.status(400).send('enter all fields')
     }
+    const newPost =
    await user.updateOne({ _id: id }, { $push: { posts: post } })
     const newUser = await user.findOne({ _id: id })
     newUser.posts = newUser.posts.sort((a, b) => a.date - b.date)
