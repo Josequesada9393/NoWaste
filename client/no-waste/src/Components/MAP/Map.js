@@ -4,7 +4,7 @@ import MarkerItem from './MarkerItem';
 import homeIcon from './place.png'
 import { useState } from 'react';
 
-function Map({itemsShared}) {
+function Map({items}) {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -37,11 +37,13 @@ const divStyle = {
           </MarkerF>
 
             {
-  itemsShared.length > 0 ? itemsShared.map((outerObject) => outerObject.posts.map((foodItem) =>
-    <MarkerItem
-      userThatSharedName={outerObject.name}
-      userThatShared={outerObject._id} name={outerObject.name}
-      key={foodItem._id} item={foodItem} />)) : "no food yet"
+  // itemsShared.length > 0 ? itemsShared.map((outerObject) => outerObject.posts.map((foodItem) =>
+  //   <MarkerItem
+  //     userThatSharedName={outerObject.name}
+  //     userThatShared={outerObject._id} name={outerObject.name}
+  //     key={foodItem._id} item={foodItem} />)) : "no food yet"
+
+            items.map((item) => <MarkerItem key={item._id} item={item} />)
 }
         </GoogleMap>
       }

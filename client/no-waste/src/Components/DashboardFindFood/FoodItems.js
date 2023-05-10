@@ -12,7 +12,7 @@ function FoodItems() {
   const { currentUser } = useContext(AuthContext);
   const { foodItems } = useContext(FoodItemsContext);
   const [filtered, setFiltered] = useState([]);
-  
+
   useEffect(() => {
     const getCurr = async () => {
     const currentId = await currentUser.id;
@@ -21,8 +21,6 @@ function FoodItems() {
   }
     getCurr()
   }, [])
-
-
 
   return (
 
