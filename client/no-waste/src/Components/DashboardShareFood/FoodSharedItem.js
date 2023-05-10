@@ -3,9 +3,11 @@ import moment from 'moment'
 import { useState } from 'react'
 import food from '../../Style/food.gif'
 import { addReview } from '../../ApiServices/ApiServices';
+import { AuthContext } from '../../State/AuthContext';
+import { useContext } from 'react';
 
 function FoodSharedItem({item}) {
-
+  const {currentUser} = useContext(AuthContext)
   const [showReview, setShowReview] = useState(false)
   const [isBooked, setIsBooked] = useState(false)
   const [isSpinner, setIsSpinner] = useState(false)
@@ -17,22 +19,26 @@ function FoodSharedItem({item}) {
   }
 
   const onSubmitReview = () => {
-    // const userThatPostsReviewName = userThatPostsReview.name;
-    // const id = userThatShared;
-    // const photo = item.photo;
-    // const name = item.title
-    // setIsSpinner(true)
-    // setTimeout(() => {
-    // setShowReview(false)
-    //   setIsSpinner(false)
-    //   setReviewThanks(true)
-    // }, 2500)
-    // addReview(review, userThatPostsReviewName, photo, name, id)
+    const itemOwnerId = item.ownerId;
+    const reviewerId = currentUser.id;//
+    const reviewerName = currentUser.name;
+    const itemId = item._id;
+    const itemOwnerName = item.ownerName;//
+    const photo = item.photo;
+    setIsSpinner(true)
+    setTimeout(() => {
+    setShowReview(false)
+      setIsSpinner(false)
+      setReviewThanks(true)
+    }, 2500)
+    addReview(itemOwnerId, reviewerId, reviewerName, itemId, itemOwnerName, review, photo)
   }
 
   const onBooking = () => {
-    // console.log('got clicked')
-    // setIsBooked(!isBooked)
+    if (!isBooked) {
+      setIsBooked(true)
+      return
+    }
   }
 
   return (

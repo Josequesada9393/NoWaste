@@ -11,7 +11,6 @@ import { FoodItemsContext } from '../../State/ItemsContext'
 
 function FindFood({ }) {
 
-  // const [itemsShared, setItemsShared] = useState({});
   const { currentUser } = useContext(AuthContext);
   const { foodItems } = useContext(FoodItemsContext);
 

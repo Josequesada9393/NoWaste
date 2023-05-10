@@ -25,10 +25,10 @@ const findFood = async () => {
 }
 
 
-const addReview = async (review, userThatPostsReviewName, photo, name, id) => {
+const addReview = async (itemOwnerId, reviewerId, reviewerName, itemId, itemOwnerName, review, photo) => {
   return fetch(`${url}/addReview`, {
-    method: 'PUT',
-    body: JSON.stringify({review, userThatPostsReviewName, photo, name, id}),
+    method: 'post',
+    body: JSON.stringify({itemOwnerId, reviewerId, reviewerName, itemId, itemOwnerName, review, photo}),
     headers: { 'Content-Type': 'application/json' },
   })
     .then(response => response.json())

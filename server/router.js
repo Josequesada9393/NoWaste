@@ -8,17 +8,17 @@ router.get('/', (req, res) => {
   res.send(db.users)
 } )
 
-router.get('/fetchUser/:id')
+// router.get('/fetchUser/:id')
 
-router.post('/login', user.login)
+// router.post('/login', user.login)
 
 router.put('/addItem', user.addItem)
 
-router.put('/addReview', user.addReview)
+router.post('/addReview', user.addReview)
 
 router.get('/findFood', user.findAllOwnerItems)
 
-router.delete('/deleteItem/:userId/:itemId', user.deleteById)
+// router.delete('/deleteItem/:userId/:itemId', user.deleteById)
 
 // new login
 router.post('/userLogin', LoginController.UserLogin)

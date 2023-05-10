@@ -4,10 +4,16 @@ const Schema = mongoose.Schema;
 
 
 const reviewSchema = new Schema({
-  userId: Number,
-  createdBy: String,
+  itemOwnerId: String,
+  reviewerId: String,
+  reviewerName: String,
+  itemId: String,
+  itemOwnerName: String,
   review: String,
-  name: String,
+  date: {
+    type: Date,
+    default: Date.now
+  },
   photo: {
     public_id: {
       type: String,
@@ -18,9 +24,12 @@ const reviewSchema = new Schema({
       required: true
     }
   }
-});
+},
+{collection: 'Reviews'});
 
+const ReviewModel = mongoose.model('ReviewModel', reviewSchema);
 
+module.exports = ReviewModel
 
 
 

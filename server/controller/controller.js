@@ -2,45 +2,36 @@ const user = require('../models/models')
 const mongoose = require('mongoose')
 const cloudinary = require('../utils/cloudinary');
 const PostModel = require('../models/PostModel')
+const ReviewModel = require('../models/ReviewModel')
 
-
-exports.login = async (req, res) => {
-  try {
-    const loginUser = await user.findOne({ email: req.body.email, password: req.body.password })
-    loginUser.posts = loginUser.posts.sort((a, b) => a.date - b.date)
-    res.status(200, "user login successful")
-    res.send(loginUser)
-  } catch (error) {
-    console.log(error,'user not found')
-    res.sendStatus(500)
-  }
-}
 
 exports.addReview = async (req, res) => {
   try {
+    const { itemOwnerId, reviewerId, reviewerName, itemId, itemOwnerName, review, photo } = await req.body;
     console.log(req.body)
-  const id = await req.body.id;
-  const review = await req.body;
-  await user.updateOne({ _id: id }, { $push: { reviews: review}})
-  const newUser = await user.find({_id:id})
-  res.send(newUser)
+    const newReview = await req.body;
+    await ReviewModel.create(newReview)
+  // console.log(req.body)
+  // const id = await req.body.id;
+  // const review = await req.body;
+  // await user.updateOne({ _id: id }, { $push: { reviews: review}})
+  // const newUser = await user.find({_id:id})
+  // res.send(newUser)
   } catch (error) {
-    res.send(error)
+    res.send(error, 'review not added')
   }
 }
 
+exports.fetchReview = async (req, res) => {
+  try {
+    const { id } = await req.params;
+    const userReviews = await ReviewModel.find({ itemOwnerId: id });
+    res.send(userReviews)
+  } catch (error) {
+  res.send(error, 'reviews not fetched')
+  }
+}
 
-// exports.findFood = async (req, res) => {
-//   try {
-//     const idToExclude = req.params.id;
-//     const users = await user.find({ _id: { $ne: idToExclude } })
-//     res.send(users)
-//   } catch (error) {
-//     console.log(errr, 'no food found')
-//   }
-// }
-
-//updated
 exports.addItem = async (req, res) => {
   const { title, date, address, photo, coordinates, id, ownerName } = await req.body;
   console.log(id)

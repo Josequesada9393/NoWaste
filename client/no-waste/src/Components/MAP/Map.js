@@ -12,7 +12,7 @@ function Map({items}) {
   })
 
   const home = { lat: 33.6189, lng: -117.9298 };
-  const [infoHome, setInfoHome] = useState(true)
+  // const [infoHome, setInfoHome] = useState(true)
 
 const divStyle = {
   background: `white`,
@@ -37,11 +37,6 @@ const divStyle = {
           </MarkerF>
 
             {
-  // itemsShared.length > 0 ? itemsShared.map((outerObject) => outerObject.posts.map((foodItem) =>
-  //   <MarkerItem
-  //     userThatSharedName={outerObject.name}
-  //     userThatShared={outerObject._id} name={outerObject.name}
-  //     key={foodItem._id} item={foodItem} />)) : "no food yet"
 
             items.map((item) => <MarkerItem key={item._id} item={item} />)
 }
