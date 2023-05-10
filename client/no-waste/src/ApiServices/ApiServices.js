@@ -25,10 +25,10 @@ const findFood = async () => {
 }
 
 
-const addReview = async (itemOwnerId, reviewerId, reviewerName, itemId, itemOwnerName, review, photo) => {
+const addReview = async (itemOwnerId, itemName, reviewerId, reviewerName, itemId, itemOwnerName, review, photo) => {
   return fetch(`${url}/addReview`, {
     method: 'post',
-    body: JSON.stringify({itemOwnerId, reviewerId, reviewerName, itemId, itemOwnerName, review, photo}),
+    body: JSON.stringify({itemOwnerId, itemName, reviewerId, reviewerName, itemId, itemOwnerName, review, photo}),
     headers: { 'Content-Type': 'application/json' },
   })
     .then(response => response.json())
@@ -37,6 +37,15 @@ const addReview = async (itemOwnerId, reviewerId, reviewerName, itemId, itemOwne
     })
     .catch((error) => { console.log(error, 'error adding review')
     });
+}
+
+const findReviews = async (id) => {
+    return await fetch(`${url}/findReview/${id}`)
+      .then(response => response.json())
+      .then(items => items)
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 }
 
 const getItems = async () => {
@@ -104,4 +113,4 @@ const loginUser = async (email, password) => {
     .catch(error => console.log(error, 'user not logged in'))
 }
 
- export {loginIn, addItem, getItems, findFood, deleteItemById, addReview, registerUser, loginUser}
+ export {loginIn, addItem, getItems, findFood, findReviews, deleteItemById, addReview, registerUser, loginUser}

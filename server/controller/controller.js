@@ -25,6 +25,7 @@ exports.addReview = async (req, res) => {
 exports.fetchReview = async (req, res) => {
   try {
     const { id } = await req.params;
+    console.log(id)
     const userReviews = await ReviewModel.find({ itemOwnerId: id });
     res.send(userReviews)
   } catch (error) {

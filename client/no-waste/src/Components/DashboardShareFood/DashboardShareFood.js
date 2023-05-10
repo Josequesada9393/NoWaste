@@ -9,12 +9,11 @@ import dining from '../../Style/dining.gif'
 
 function ShareFood({}) {
   const { currentUser } = useContext(AuthContext)
-  const name = currentUser.name;
   return (
     <div className='shareFood'>
         <div className='myheader br4 w-80 tc center b h2 w5 ma5'>
         <img className="tc center ma1" style={{ borderRadius: '10px', opacity: 0.7, width: '80px' }} src={dining}></img>
-         <h1 className='tc center niceFont consolas'>Hi {name}, what do you want to share today?</h1></div>
+         <h1 className='tc center niceFont consolas'>Hi {currentUser && currentUser.name}, what do you want to share today?</h1></div>
       <AddFoodItem />
 
       <FoodItems/>

@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
   itemOwnerId: String,
+  itemName: String,
   reviewerId: String,
   reviewerName: String,
   itemId: String,

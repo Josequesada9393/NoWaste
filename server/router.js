@@ -16,7 +16,9 @@ router.put('/addItem', user.addItem)
 
 router.post('/addReview', user.addReview)
 
-router.get('/findFood', user.findAllOwnerItems)
+router.get('/findFood', user.findAllOwnerItems);
+
+router.get('/findReview/:id', user.fetchReview)
 
 // router.delete('/deleteItem/:userId/:itemId', user.deleteById)
 

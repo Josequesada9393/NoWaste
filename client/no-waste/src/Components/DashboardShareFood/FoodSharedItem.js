@@ -20,6 +20,7 @@ function FoodSharedItem({item}) {
 
   const onSubmitReview = () => {
     const itemOwnerId = item.ownerId;
+    const itemName = item.title;
     const reviewerId = currentUser.id;//
     const reviewerName = currentUser.name;
     const itemId = item._id;
@@ -31,7 +32,7 @@ function FoodSharedItem({item}) {
       setIsSpinner(false)
       setReviewThanks(true)
     }, 2500)
-    addReview(itemOwnerId, reviewerId, reviewerName, itemId, itemOwnerName, review, photo)
+    addReview(itemOwnerId, itemName, reviewerId, reviewerName, itemId, itemOwnerName, review, photo)
   }
 
   const onBooking = () => {

@@ -1,7 +1,8 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useContext } from "react";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
-import { findFood } from "../ApiServices/ApiServices";
+import { findFood, findReviews } from "../ApiServices/ApiServices";
+import { AuthContext } from "./AuthContext";
 
 
 //auth0 logic, if user does not exist, reject, please register
@@ -11,11 +12,13 @@ import { findFood } from "../ApiServices/ApiServices";
 export const FoodItemsContext = createContext({
   foodItems: null,
   setFoodItems: () => null,
+  reviews: null,
+  setReviews: () => null
 });
 
 export const FoodItemsProvider = ({ children }) => {
   const [foodItems, setFoodItems] = useState([]);
-
+  const [reviews, setReviews] = useState([])
 
   useEffect(() => {
     const getItems = async () => {
@@ -27,7 +30,7 @@ export const FoodItemsProvider = ({ children }) => {
 
 
 
-  const value = { foodItems, setFoodItems};
+  const value = { foodItems, setFoodItems, reviews, setReviews};
 
   return <FoodItemsContext.Provider value={value}>{children}</FoodItemsContext.Provider>
 }
