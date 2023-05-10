@@ -19,7 +19,7 @@ function FoodItems() {
     setFiltered(currentUserItems)
   }
     getCurr()
-  }, [foodItems])
+  }, [])
 
 
 

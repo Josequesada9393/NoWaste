@@ -9,7 +9,7 @@ import Map from '../MAP/Map'
 
 function FindFood({ }) {
 
-  const [itemsShared, setItemsShared] = useState({});
+  // const [itemsShared, setItemsShared] = useState({});
 
 
   return (
@@ -18,8 +18,8 @@ function FindFood({ }) {
       <div className='title br4 w-80 tc center b h2 w5 ma5'>
       <img className="tc center ma1" style={{ borderRadius: '10px', opacity: 0.7, width: '80px' }} src={dining}></img>
       <h1 className='tc center niceFont consolas'>Food near you</h1></div>
-      <FoodShared itemsShared={itemsShared} setItemsShared={setItemsShared} />
-      <Map itemsShared={itemsShared} />
+      <FoodShared/>
+      {/* <Map itemsShared={itemsShared} /> */}
 
   <section className="ph3 ph5-ns pv5">
   <article className="mw8 br4 center br2 ba grow light-pink">

@@ -5,8 +5,7 @@ import { deleteItemById } from '../../ApiServices/ApiServices'
 
 
 function FoodItem({ item}) {
-  // const itemId = item._id
-  // const userId = user._id
+
 
   const onDelete = async () => {
     // console.log('deleting')
