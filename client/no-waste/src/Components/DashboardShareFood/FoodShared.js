@@ -1,33 +1,30 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import FoodSharedItem from './FoodSharedItem'
 import {useContext} from 'react'
 import { findFood } from '../../ApiServices/ApiServices';
 import { LoginContext } from '../../State/LoginContext';
 import "./FoodShared.css"
 import { AuthContext } from '../../State/AuthContext';
-
+import { FoodItemsContext } from '../../State/ItemsContext';
 
 function FoodShared({}) {
   const { currentUser } = useContext(AuthContext);
+  const { foodItems } = useContext(FoodItemsContext);
 
-  // const id = user._id;
-  const showFood = async () => {
-    // const itemsShared = await findFood(id)
-    // setItemsShared(itemsShared)
-    // return itemsShared
-  }
+  const [filtered, setFiltered] = useState([]);
 
   useEffect(() => {
-    showFood()
-  },[])
-
+    const getCurr = async () => {
+    const currentId = await currentUser.id;
+    const currentUserItems = await foodItems.filter((item) => currentId != item.ownerId);
+    setFiltered(currentUserItems)
+  }
+    getCurr()
+  }, [])
+  console.log(filtered)
   return (
     <div className='foodSharedContainer shadow-5 center tc'>
-
-    <FoodSharedItem/>
-    <FoodSharedItem/>
-    <FoodSharedItem/>
-
+      {filtered.map((item) => <FoodSharedItem item={item} key={item._id}/>)}
     </div>
   )
 }

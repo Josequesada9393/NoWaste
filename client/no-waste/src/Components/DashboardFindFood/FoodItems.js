@@ -11,7 +11,8 @@ function FoodItems() {
   // const { setUser, user } = useContext(LoginContext);
   const { currentUser } = useContext(AuthContext);
   const { foodItems } = useContext(FoodItemsContext);
-  const [filtered, setFiltered] = useState([])
+  const [filtered, setFiltered] = useState([]);
+  
   useEffect(() => {
     const getCurr = async () => {
     const currentId = await currentUser.id;
