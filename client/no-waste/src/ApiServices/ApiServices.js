@@ -1,7 +1,7 @@
 
-const url = "http://localhost:4000"
+// const url = "http://localhost:4000"
 // const url = "https://nowasteserver.vercel.app"
-// const url = "https://nowasteserver.onrender.com"
+const url = "https://nowasteserver.onrender.com"
 
  const loginIn = (email, password) => {
     return fetch(`${url}/login`, {
@@ -105,7 +105,6 @@ const loginUser = async (email, password) => {
 
   return await fetch(`${url}/userLogin`, {
     method: 'POST',
-    mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(email, password)
   })
