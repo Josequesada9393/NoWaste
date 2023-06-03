@@ -25,9 +25,6 @@ function ReviewsPortal() {
   return (
     <div className='fatherOfAll'>
       {reviews.map((review) => <ReviewsItems review={review} />)}
-      {/* <ReviewsItems/>
-      <ReviewsItems/>
-      <ReviewsItems/> */}
     </div>
   )
 }

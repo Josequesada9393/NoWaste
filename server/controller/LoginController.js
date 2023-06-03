@@ -10,6 +10,7 @@ const user = require('../models/models');
 exports.UserLogin = async (req, res) => {
   try {
     const { password, email } = await req.body;
+
     const ExistingUser = await UserModel.find({ email: email })
     if (!ExistingUser.length) {
       return `user ${email} not found`
@@ -23,7 +24,7 @@ exports.UserLogin = async (req, res) => {
         "RANDOM-TOKEN",
         { expiresIn: "24h" })
 
-      res.status(200).send({
+      res.status(200).json({
         message: 'login successful',
         email: ExistingUser[0].email,
         id: ExistingUser[0]._id,
@@ -41,21 +42,23 @@ exports.UserLogin = async (req, res) => {
 
 exports.UserRegister = async (req, res) => {
   try {
-    const { name, email, password } = await req.body;
+    const { name, email, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = await UserModel.find({email: email })
-    if (!newUser.length) {
+    const newUser = await UserModel.findOne({email: email });
+   
+    if (!newUser) {
     await UserModel.create({
       name: name,
       email: email,
       password: hashedPassword
     });
+
       const newRegisteredUser = await UserModel.find({email: email });
-      res.send(newRegisteredUser);
+      await res.json(newRegisteredUser);
       return
     }
     console.log(`user ${email} already registered`)
-    res.send(newUser)
+    await res.json(newUser)
 
   } catch (error) {
     res.status(500).send({

@@ -3,12 +3,21 @@ import FoodItem from './FoodItem'
 import './FoodItems.css'
 import { useContext } from 'react'
 import { FoodItemsContext } from '../../State/ItemsContext'
+import { AuthContext } from '../../State/AuthContext'
 function FoodItems() {
 
   const { foodItems } = useContext(FoodItemsContext);
+  const { currentUser } = useContext(AuthContext);
+
+  const [currUserItems, setCurrUserItems] = useState([])
 
   useEffect(() => {
-    
+    const getCurr = async () => {
+      const currentId = await currentUser.id;
+      const currentUserItems = await foodItems.filter((item) => currentId === item.ownerId);
+      setCurrUserItems(currentUserItems)
+    }
+    getCurr()
   }, [foodItems])
   
   return (
@@ -16,7 +25,7 @@ function FoodItems() {
     <div className='container shadow-5 br2 bg-transparent w-70 '>
       hello
       {/* {user.posts.map((foodItem) => <FoodItem setUser={setUser } user={user} key={user._id} item={foodItem} />)} */}
-      {foodItems.map((item) => <FoodItem key={item._id} item={item} />)}
+      {currUserItems.map((item) => <FoodItem key={item._id} item={item} />)}
     </div>
 
   )
