@@ -50,6 +50,7 @@ function AddFoodItem() {
   const handleImage = (e) => {
     const file = e.target.files[0];
     setFileToBase(file);
+    console.log(file)
 }
 
   const setFileToBase = (file) => {
@@ -69,12 +70,10 @@ function AddFoodItem() {
         onChange={(e) => setDate(e.target.value)} required/>
         <input className='formInput ma1 pa3 br2 hover-bg-dark-blue inputFile' type="file" title="" name="photo"
         onChange={handleImage} required/>
-      {/* <AutoComplete address={address} coordinates={coordinates} setAddress={setAddress} setCoordinates={setCoordinates} /> */}
-
+        
       <AutoComplete
         className='formInput ma1 pa2 br2 hover-bg-dark-blue'
         apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
-        // apiKey="AIzaSyBQWlb7R2WqmHa_UqFegIPdyFXs3hbYz3M"
         onPlaceSelected={(place) => {
           setCoordinates({
           lat: place.geometry.location.lat(),
