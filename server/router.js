@@ -20,7 +20,7 @@ router.get('/findFood/:id', user.findAllOwnerItems);
 
 router.get('/findReview/:id', user.fetchReview)
 
-// router.delete('/deleteItem/:userId/:itemId', user.deleteById)
+router.delete('/deleteItem/:userId/:itemId', user.deleteById)
 
 // new login
 router.post('/userLogin', LoginController.UserLogin)

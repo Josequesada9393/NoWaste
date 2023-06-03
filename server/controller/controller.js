@@ -56,7 +56,7 @@ exports.addItem = async (req, res) => {
     }
 
 await PostModel.create(newPost);
-await res.status(200).send('success')
+await res.status(200).json('success')
 
   } catch (error) {
     res.sendStatus(500)
@@ -75,14 +75,10 @@ exports.findAllOwnerItems = async (req, res) => {
 exports.deleteById = async (req, res) => {
   try {
     const userId = req.params.userId;
-    const itemId = req.params.itemId
-    const userSel = await user.findById(userId)
-    userSel.posts = userSel.posts.filter((el) => {
-      return itemId !== el._id.valueOf()
-    })
-    userSel.posts = userSel.posts.sort((a, b) => a.date - b.date)
-    await userSel.save()
-    res.send(userSel)
+    const itemId = req.params.itemId;
+    await PostModel.deleteOne({_id: itemId, ownerId: userId});
+    await res.status(200).json('success')
+
   } catch (error) {
      res.sendStatus(500)
     console.log(error, "item not deleted")

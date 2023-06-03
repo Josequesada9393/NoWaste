@@ -69,8 +69,8 @@ const addItem = async (id, title, date, ownerName, photo, address, coordinates) 
   }
 }
 
-const deleteItemById = (userId, itemId) => {
-  return fetch(`${url}/deleteItem/${userId}/${itemId}`, {
+const deleteItemById = async (userId, itemId) => {
+  return await fetch(`${url}/deleteItem/${userId}/${itemId}`, {
     method: 'DELETE'
   })
     .then(response => response.json())

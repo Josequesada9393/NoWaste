@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import moment from 'moment'
 import './FoodItem.css'
-import { deleteItemById } from '../../ApiServices/ApiServices'
+import { deleteItemById, findFood } from '../../ApiServices/ApiServices';
+import { AuthContext } from '../../State/AuthContext';
+import { FoodItemsContext } from '../../State/ItemsContext';
 
-
-function FoodItem({ item}) {
-  
+function FoodItem({item}) {
+  const {foodItems, setFoodItems} = useContext(FoodItemsContext)
+  const {currentUser} = useContext(AuthContext)
 
 
   const onDelete = async () => {
-    // console.log('deleting')
-    // const newUser = await deleteItemById(userId, itemId)
-    // setUser(newUser)
+     await deleteItemById(currentUser.id, item._id);
+     const updatedItems = await findFood(currentUser.id);
+    setFoodItems(updatedItems)
+
   }
 
 

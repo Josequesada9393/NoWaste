@@ -12,13 +12,12 @@ import { findFood } from '../../ApiServices/ApiServices';
 
 function ShareFood({}) {
   const { currentUser } = useContext(AuthContext);
-  const {foodItems, setFoodItems} = useContext(FoodItemsContext);
+  const {setFoodItems} = useContext(FoodItemsContext);
 
  async function getItems() {
     const items = await findFood(currentUser.id);
     setFoodItems(items);
   }
-  
   useEffect(() => {
     getItems()
   }, [])
