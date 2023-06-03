@@ -42,7 +42,9 @@ exports.UserLogin = async (req, res) => {
 
 exports.UserRegister = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password } = await req.body;
+    console.log(req.body)
+    console.log(name)
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = await UserModel.findOne({email: email });
    
@@ -54,11 +56,11 @@ exports.UserRegister = async (req, res) => {
     });
 
       const newRegisteredUser = await UserModel.find({email: email });
-      await res.json(newRegisteredUser);
+      await res.status(200).json(newRegisteredUser);
       return
     }
     console.log(`user ${email} already registered`)
-    await res.json(newUser)
+    await res.status(200).json(newUser)
 
   } catch (error) {
     res.status(500).send({

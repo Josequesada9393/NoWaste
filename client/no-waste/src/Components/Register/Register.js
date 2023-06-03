@@ -10,13 +10,19 @@ import { registerUser } from '../../ApiServices/ApiServices'
 function Register({ }) {
 
  const { setCurrentUser, currentUser, isAuth, logout } = useContext(AuthContext);
-  const [logUser, setLogUser] = useState(null)
+const [logUser, setLogUser] = useState(null);
+const [loading, setLoading] = useState(false)
 
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    setCurrentUser(logUser)
-    await registerUser(currentUser);
+    setLoading(true)
+     setCurrentUser(logUser);
+    setTimeout(() => {
+      registerUser(logUser);
+      setLoading(false)
+    }, 2000); // Executes the callback function after a 2000ms (2 seconds) delay
+    
   }
 
   return (
@@ -58,9 +64,9 @@ function Register({ }) {
                 </div>
               </form>
               <div className="">
-                <input
+              {loading ? <h1>loading...</h1> : <input
                   className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-                  type="submit" value="Register" onClick={handleRegister} />
+                  type="submit" value="Register" onClick={handleRegister} />}  
               </div>
 
               <div className="lh-copy mt3">

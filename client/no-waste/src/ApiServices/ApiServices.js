@@ -1,6 +1,6 @@
 
-// const url = "http://localhost:4000"
-const url = "https://nowasteserver.vercel.app"
+const url = "http://localhost:4000"
+// const url = "https://nowasteserver.vercel.app"
 
  const loginIn = (email, password) => {
     return fetch(`${url}/login`, {
@@ -86,10 +86,12 @@ const deleteItemById = async (userId, itemId) => {
 // new register system
 
 const registerUser = async (currentUser) => {
+  console.log(currentUser)
   return await fetch(`${url}/userRegister`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(currentUser)
+    mode: 'no-cors',
+    body: JSON.stringify({...currentUser})
   })
     .then(response => response.json())
     .then(response => {
@@ -103,6 +105,7 @@ const loginUser = async (email, password) => {
 
   return await fetch(`${url}/userLogin`, {
     method: 'POST',
+    mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(email, password)
   })
