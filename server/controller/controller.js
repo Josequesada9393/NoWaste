@@ -55,7 +55,9 @@ exports.addItem = async (req, res) => {
       ownerName: ownerName
     }
 
-await PostModel.create(newPost)
+await PostModel.create(newPost);
+await res.status(200).send('success')
+
   } catch (error) {
     res.sendStatus(500)
     console.log(error, "item not added")
@@ -63,7 +65,9 @@ await PostModel.create(newPost)
 }
 
 exports.findAllOwnerItems = async (req, res) => {
-  const items = await PostModel.find({});
+  const {id} = req.params
+  const items = await PostModel.find({ownerId: id});
+  console.log(items)
   res.send(items)
 }
 

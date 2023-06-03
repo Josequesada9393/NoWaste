@@ -9,11 +9,11 @@ import { FoodItemsProvider } from './State/ItemsContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <FoodItemsProvider>
+  <FoodItemsProvider>
     <AuthProvider>
       <App />
-      </AuthProvider>
-      </FoodItemsProvider>
+    </AuthProvider>
+  </FoodItemsProvider>
   </React.StrictMode>
 );
 

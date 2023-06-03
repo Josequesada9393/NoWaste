@@ -21,24 +21,30 @@ function AddFoodItem() {
     lng: null
   })
   const onSubmit = async (e) => {
-    if (title === '' || date === '' || photo === '' || address === '') return
-
-  const dateNow = new Date(Date.now())
-  const dateEntered = new Date(date)
+    e.preventDefault()
+    if (title === '' || date === '' || photo === '' || address === '') return;
+  
+    const dateNow = new Date(Date.now());
+    const dateEntered = new Date(date);
+  
     if (dateNow >= dateEntered) {
-       alert("you can't go back in time");
+      alert("You can't go back in time");
     } else {
-
-      e.preventDefault();
-    await addItem(id, title, date, ownerName, photo, address, coordinates)
-      setTitle('');
-      setDate('');
-      setPhoto('');
-      setAddress('')
+      try {
+        await addItem(id, title, date, ownerName, photo, address, coordinates);
+        setTitle('');
+        setDate('');
+        setPhoto('');
+        setAddress('');
+        const newItems = await findFood(currentUser.id);
+        setFoodItems(newItems)
+      } catch (error) {
+        console.error('Error adding item:', error);
       }
-    let newItems = await findFood();
-    setFoodItems(newItems)
-  }
+    }
+
+  };
+  
 
   //handle and conver it in base 64
   const handleImage = (e) => {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import FoodItems from '../DashboardFindFood/FoodItems'
 import {Link} from 'react-router-dom'
 import AddFoodItem from './AddFoodItemForm/AddFoodItem';
@@ -6,9 +6,23 @@ import './DashboardShareFood.css'
 import {useContext } from 'react';
 import { AuthContext } from '../../State/AuthContext';
 import dining from '../../Style/dining.gif'
+import { FoodItemsContext } from '../../State/ItemsContext';
+import { findFood } from '../../ApiServices/ApiServices';
+
 
 function ShareFood({}) {
-  const { currentUser } = useContext(AuthContext)
+  const { currentUser } = useContext(AuthContext);
+  const {foodItems, setFoodItems} = useContext(FoodItemsContext);
+
+ async function getItems() {
+    const items = await findFood(currentUser.id);
+    setFoodItems(items);
+  }
+  
+  useEffect(() => {
+    getItems()
+  }, [])
+
   return (
     <div className='shareFood'>
         <div className='myheader br4 w-80 tc center b h2 w5 ma5'>

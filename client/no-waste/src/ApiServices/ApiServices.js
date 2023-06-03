@@ -15,12 +15,10 @@ const url = "http://localhost:4000"
       })
  }
 
-const findFood = async () => {
-  return fetch(`${url}/findFood`)
+const findFood = async (userId) => {
+  return fetch(`${url}/findFood/${userId}`)
     .then(response => response.json())
-    .then(data => {
-     return data
-    })
+    .then(data => data)
     .catch((error) => console.log(error, "error fetching"))
 }
 
@@ -57,18 +55,18 @@ const getItems = async () => {
         });
 }
 
-const addItem = (id, title, date, ownerName, photo, address, coordinates) => {
-  return fetch(`${url}/addItem`, {
-    method: 'PUT',
-    body: JSON.stringify({id, title, date, ownerName, photo, address, coordinates }),
-    headers: { 'Content-Type': 'application/json' },
-  })
-    .then(response => response.json())
-    .then(response => {
-      return response
-    })
-    .catch((error) => {console.log(error, 'error adding')
-    });
+const addItem = async (id, title, date, ownerName, photo, address, coordinates) => {
+  try {
+     return await fetch(`${url}/addItem`, {
+      method: 'POST',
+      body: JSON.stringify({ id, title, date, ownerName, photo, address, coordinates }),
+      headers: { 'Content-Type': 'application/json' },
+    }).then(response => response.json())
+    .then(data => data)
+
+  } catch (error) {
+    console.log(error, 'error adding');
+  }
 }
 
 const deleteItemById = (userId, itemId) => {

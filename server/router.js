@@ -12,11 +12,11 @@ router.get('/', (req, res) => {
 
 // router.post('/login', user.login)
 
-router.put('/addItem', user.addItem)
+router.post('/addItem', user.addItem)
 
 router.post('/addReview', user.addReview)
 
-router.get('/findFood', user.findAllOwnerItems);
+router.get('/findFood/:id', user.findAllOwnerItems);
 
 router.get('/findReview/:id', user.fetchReview)
 

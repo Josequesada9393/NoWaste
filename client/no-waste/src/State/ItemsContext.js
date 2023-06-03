@@ -2,7 +2,10 @@ import { createContext, useEffect, useState, useContext } from "react";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 import { findFood, findReviews } from "../ApiServices/ApiServices";
-import { AuthContext } from "./AuthContext";
+
+
+
+
 
 
 //auth0 logic, if user does not exist, reject, please register
@@ -21,14 +24,8 @@ export const FoodItemsProvider = ({ children }) => {
   const [reviews, setReviews] = useState([])
 
   useEffect(() => {
-    const getItems = async () => {
-    const items = await findFood();
-    setFoodItems(items)
-  }
-  getItems()
-  }, [])
-
-
+    console.log('hello')
+  }, [foodItems])
 
   const value = { foodItems, setFoodItems, reviews, setReviews};
 
