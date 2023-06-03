@@ -43,8 +43,6 @@ exports.UserLogin = async (req, res) => {
 exports.UserRegister = async (req, res) => {
   try {
     const { name, email, password } =  req.body;
-    console.log(req.body)
-    console.log(name)
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = await UserModel.findOne({email: email });
    
