@@ -1,6 +1,6 @@
 
-const url = "http://localhost:4000"
-// const url = "https://nowasteserver.vercel.app"
+// const url = "http://localhost:4000"
+const url = "https://nowasteserver.vercel.app"
 
  const loginIn = (email, password) => {
     return fetch(`${url}/login`, {

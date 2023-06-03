@@ -56,6 +56,7 @@ exports.UserRegister = async (req, res) => {
     });
 
       const newRegisteredUser = await UserModel.find({email: email });
+      
       await res.status(200).json(newRegisteredUser);
       return
     }
