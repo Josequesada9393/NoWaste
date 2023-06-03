@@ -9,7 +9,7 @@ const user = require('../models/models');
 
 exports.UserLogin = async (req, res) => {
   try {
-    const { password, email } = await req.body;
+    const { password, email } = req.body;
 
     const ExistingUser = await UserModel.find({ email: email })
     if (!ExistingUser.length) {
