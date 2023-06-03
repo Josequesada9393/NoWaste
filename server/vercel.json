@@ -1,39 +1,49 @@
-
 {
-    "version": 2,
-    "routes": [
-      {
-        "src": "/",
-        "dest": "/server.js"
-      },
-      {
-        "src": "/addItem",
-        "dest": "/server.js"
-      },
-      {
-        "src": "/addReview",
-        "dest": "/server.js"
-      },
-      {
-        "src": "/findFood/:id",
-        "dest": "/server.js"
-      },
-      {
-        "src": "/findReview/:id",
-        "dest": "/server.js"
-      },
-      {
-        "src": "/deleteItem/:userId/:itemId",
-        "dest": "/server.js"
-      },
-      {
-        "src": "/userLogin",
-        "dest": "/server.js"
-      },
-      {
-        "src": "/userRegister",
-        "dest": "/server.js"
+  "version": 2,
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/addItem",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/addReview",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/findFood/:id",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/findReview/:id",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/deleteItem/:userId/:itemId",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/userLogin",
+      "dest": "/server.js",
+      "methods": ["OPTIONS", "POST"],
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
       }
-    ]
-  }
-  
+    },
+    {
+      "src": "/userRegister",
+      "dest": "/server.js",
+      "methods": ["OPTIONS", "POST"],
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      }
+    }
+  ]
+}
