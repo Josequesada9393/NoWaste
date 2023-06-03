@@ -24,7 +24,6 @@ export const FoodItemsProvider = ({ children }) => {
   const [reviews, setReviews] = useState([])
 
   useEffect(() => {
-    console.log('hello')
   }, [foodItems])
 
   const value = { foodItems, setFoodItems, reviews, setReviews};

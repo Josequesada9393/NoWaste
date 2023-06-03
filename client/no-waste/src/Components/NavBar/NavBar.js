@@ -13,11 +13,8 @@ function NavBar({ isLoggedIn }) {
  <></>
   ) : (
     <nav className="pa3 pa4-ns shadow-3 light-pink">
-     {/* <Link to="/"> <a className="link f6 black grow b f5-ns dib mr3" href="#" title="NoWaste">
-        NoWaste
-      </a></Link> */}
 
-      <Link className="link f6 black grow b f5-ns dib mr3" href="#" title="NoWaste" to="/">
+      <Link className="link f7 black grow fw9 f5-ns dib mr3" href="#" title="NoWaste" to="/">
         NoWaste
       </Link>
 

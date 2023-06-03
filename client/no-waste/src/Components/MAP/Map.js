@@ -8,8 +8,8 @@ function Map({items}) {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyBQWlb7R2WqmHa_UqFegIPdyFXs3hbYz3M"
-    // googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+    // googleMapsApiKey: "AIzaSyBQWlb7R2WqmHa_UqFegIPdyFXs3hbYz3M"
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
   })
 
   const home = { lat: 33.6189, lng: -117.9298 };

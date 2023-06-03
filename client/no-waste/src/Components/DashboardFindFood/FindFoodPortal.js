@@ -15,8 +15,6 @@ function FindFood() {
   const { foodItems } = useContext(FoodItemsContext);
 
   const [filtered, setFiltered] = useState([]);
-  console.log(foodItems, 'food items')
-  console.log(filtered, 'filtered')
 
   useEffect(() => {
     const getCurr = async () => {

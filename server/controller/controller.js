@@ -67,7 +67,6 @@ await res.status(200).json('success')
 exports.findAllOwnerItems = async (req, res) => {
   const {id} = req.params
   const items = await PostModel.find({ownerId: id});
-  console.log(items)
   res.send(items)
 }
 
