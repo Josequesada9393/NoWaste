@@ -70,7 +70,7 @@ function AddFoodItem() {
         onChange={(e) => setDate(e.target.value)} required/>
         <input className='formInput ma1 pa3 br2 hover-bg-dark-blue inputFile' type="file" title="" name="photo"
         onChange={handleImage} required/>
-        
+
       <AutoComplete
         className='formInput ma1 pa2 br2 hover-bg-dark-blue'
         apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}

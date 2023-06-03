@@ -12,7 +12,6 @@ function Map({items}) {
   })
 
   const home = { lat: 33.6189, lng: -117.9298 };
-  // const [infoHome, setInfoHome] = useState(true)
 
 const divStyle = {
   background: `white`,
