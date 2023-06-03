@@ -1,18 +1,19 @@
 import React from 'react'
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext } from 'react'
 import './AddFoodItem.css'
-import { addItem } from '../../../ApiServices/ApiServices';
+import { addItem, findFood } from '../../../ApiServices/ApiServices';
 import {AuthContext} from '../../../State/AuthContext'
+import { FoodItemsContext } from '../../../State/ItemsContext';
 import AutoComplete from 'react-google-autocomplete'
 
 function AddFoodItem() {
   const { currentUser } = useContext(AuthContext);
+  const {setFoodItems} = useContext(FoodItemsContext)
   const [title, setTitle] = useState('')
   const [date, setDate] = useState('')
   const [photo, setPhoto] = useState('')
   const id = currentUser.id;
   const ownerName = currentUser.name;
-  console.log('ownerName', ownerName)
 
  const [address, setAddress] = useState('')
   const [coordinates, setCoordinates] = useState({
@@ -20,7 +21,6 @@ function AddFoodItem() {
     lng: null
   })
   const onSubmit = async (e) => {
-    console.log(title, date, photo, address)
     if (title === '' || date === '' || photo === '' || address === '') return
 
   const dateNow = new Date(Date.now())
@@ -36,6 +36,8 @@ function AddFoodItem() {
       setPhoto('');
       setAddress('')
       }
+    let newItems = await findFood();
+    setFoodItems(newItems)
   }
 
   //handle and conver it in base 64
@@ -66,7 +68,8 @@ function AddFoodItem() {
 
       <AutoComplete
         className='formInput ma1 pa2 br2 hover-bg-dark-blue'
-        apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+        // apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+        apiKey="AIzaSyBQWlb7R2WqmHa_UqFegIPdyFXs3hbYz3M"
         onPlaceSelected={(place) => {
           setCoordinates({
           lat: place.geometry.location.lat(),

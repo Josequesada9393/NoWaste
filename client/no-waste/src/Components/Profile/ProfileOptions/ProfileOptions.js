@@ -9,7 +9,7 @@ function ProfileOptions({ }) {
   return (
     <div>
       <section className="ph3 ph5-ns pv1 shadow-5 tc center">
-        <h1>Welcome back <h2 className='b grow'>{currentUser && currentUser.name}</h2></h1>
+        <h1>Welcome back <span className='b grow'>{currentUser && currentUser.name}</span></h1>
         <article className="mw8 br4 center br2 ba">
           <div className="dt-ns dt--fixed-ns w-100">
 <Icon/>

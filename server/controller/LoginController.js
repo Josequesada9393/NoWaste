@@ -52,7 +52,6 @@ exports.UserRegister = async (req, res) => {
     });
       const newRegisteredUser = await UserModel.find({email: email });
       res.send(newRegisteredUser);
-      console.log('new registered user', email)
       return
     }
     console.log(`user ${email} already registered`)

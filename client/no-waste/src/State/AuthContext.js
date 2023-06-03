@@ -28,12 +28,12 @@ export const AuthProvider = ({ children }) => {
     if (currentUser) {
       cookies.set("userToken", currentUser.token);
       setIsAuth(true)
-      console.log(currentUser)
+      console.log(currentUser, 'userAtAuth')
       console.log(cookies.get("userToken"));
     } else {
       cookies.remove("userToken");
       setIsAuth(false)
-      console.log(currentUser)
+      console.log(currentUser, 'no current User available')
       console.log(cookies.get("userToken"))
     }
   }, [currentUser])

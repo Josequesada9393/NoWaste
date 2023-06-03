@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import FoodItem from './FoodItem'
-import { LoginContext } from '../../State/LoginContext'
 import './FoodItems.css'
 import { useContext } from 'react'
 import { AuthContext } from '../../State/AuthContext'
-import { findFood } from '../../ApiServices/ApiServices'
 import { FoodItemsContext } from '../../State/ItemsContext'
 function FoodItems() {
 
@@ -20,7 +18,7 @@ function FoodItems() {
     setFiltered(currentUserItems)
   }
     getCurr()
-  }, [])
+  }, [foodItems])
 
   return (
 

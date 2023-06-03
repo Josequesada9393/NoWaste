@@ -8,7 +8,6 @@ function AutoComplete({address, setAddress, coordinates, setCoordinates}) {
   const handleSelect = async value => {
     const results = await geocodeByAddress(value);
     const ll = await getLatLng(results[0])
-    console.log('ll', ll);
     setAddress(value);
     setCoordinates(ll)
   }

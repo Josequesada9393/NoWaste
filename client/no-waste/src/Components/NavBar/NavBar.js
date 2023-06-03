@@ -13,16 +13,21 @@ function NavBar({ isLoggedIn }) {
  <></>
   ) : (
     <nav className="pa3 pa4-ns shadow-3 light-pink">
-     <Link to="/"> <a className="link f6 black grow b f5-ns dib mr3" href="#" title="NoWaste">
+     {/* <Link to="/"> <a className="link f6 black grow b f5-ns dib mr3" href="#" title="NoWaste">
         NoWaste
-      </a></Link>
-      <Link to="/reviews"><a className="link dim grow black f6 f5-ns dib mr3" href="#" title="Reviews">
+      </a></Link> */}
+
+      <Link className="link f6 black grow b f5-ns dib mr3" href="#" title="NoWaste" to="/">
+        NoWaste
+      </Link>
+
+      <Link className="link dim grow black f6 f5-ns dib mr3" href="#" title="Reviews" to="/reviews">
         Your Reviews
-      </a></Link>
-      <Link to="/findfood"><a className="link dim grow black f6 f5-ns dib mr3" href="#" title="Shared">
+     </Link>
+      <Link className="link dim grow black f6 f5-ns dib mr3" href="#" title="Shared" to="/findfood">
         Shared
-      </a></Link>
-      <Link to="/about" ><a className="link dim grow black f6 f5-ns dib mr3" title="About">About</a></Link>
+      </Link>
+      <Link className="link dim grow black f6 f5-ns dib mr3" title="About" to="/about" >About</Link>
       <button
         onClick={logout}
         className="link dim black f6 f5-ns dib mr3"

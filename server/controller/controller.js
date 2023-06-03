@@ -8,7 +8,6 @@ const ReviewModel = require('../models/ReviewModel')
 exports.addReview = async (req, res) => {
   try {
     const { itemOwnerId, reviewerId, reviewerName, itemId, itemOwnerName, review, photo } = await req.body;
-    console.log(req.body)
     const newReview = await req.body;
     await ReviewModel.create(newReview)
   // console.log(req.body)
@@ -25,7 +24,6 @@ exports.addReview = async (req, res) => {
 exports.fetchReview = async (req, res) => {
   try {
     const { id } = await req.params;
-    console.log(id)
     const userReviews = await ReviewModel.find({ itemOwnerId: id });
     res.send(userReviews)
   } catch (error) {
@@ -35,7 +33,6 @@ exports.fetchReview = async (req, res) => {
 
 exports.addItem = async (req, res) => {
   const { title, date, address, photo, coordinates, id, ownerName } = await req.body;
-  console.log(id)
   try {
   const result = await cloudinary.uploader.upload(photo, {
       folder: "products",
@@ -67,8 +64,6 @@ await PostModel.create(newPost)
 
 exports.findAllOwnerItems = async (req, res) => {
   const items = await PostModel.find({});
-  console.log('hello')
-  console.log(items)
   res.send(items)
 }
 

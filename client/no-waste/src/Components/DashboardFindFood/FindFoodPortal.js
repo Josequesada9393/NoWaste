@@ -9,7 +9,7 @@ import { AuthContext } from '../../State/AuthContext'
 import { FoodItemsContext } from '../../State/ItemsContext'
 
 
-function FindFood({ }) {
+function FindFood() {
 
   const { currentUser } = useContext(AuthContext);
   const { foodItems } = useContext(FoodItemsContext);
@@ -24,7 +24,6 @@ function FindFood({ }) {
   }
     getCurr()
   }, [])
-  console.log(filtered)
 
   return (
 

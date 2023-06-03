@@ -18,7 +18,6 @@ function ReviewsPortal() {
       const currentUserReviews = await findReviews(id);
       setReviews(currentUserReviews)
     };
-    console.log(reviews)
     getReviews()
 
   }, [])
