@@ -91,8 +91,7 @@ const registerUser = async (currentUser) => {
   return await fetch(`${url}/userRegister`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    mode: 'no-cors',
-    body: JSON.stringify({...currentUser})
+    body: JSON.stringify(currentUser)
   })
     .then(response => response.json())
     .then(response => {
