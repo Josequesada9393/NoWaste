@@ -22,9 +22,9 @@ function FoodItem({item}) {
 
     < div className = 'foodContain' >
     <div className='contain'>
-      <div className='itemShare tc center ma1 b pa2 br2 bg-light-pink  grow'><h4>{item.title}</h4></div>
-      <div className='itemShare tc center ma1 pa2 br2 bg-white grow'><h4 className="b">Pick up by:{moment(item.date).format('DD/MM/YYYY HH:mm')}</h4></div>
-      <div className='itemShare tc center ma1 pa2 br2 bg-white grow'><h4 className="b">Pick up in:{item.address}</h4></div>
+      <div className='itemShare tc center ma1 b pa2 br2 bg-light-pink  grow'><h4 className='bg-white'>{item.title}</h4></div>
+      <div className='itemShare tc center ma1 pa2 br2 bg-white grow'><h4 className="b bg-white">Pick up by:{moment(item.date).format('DD/MM/YYYY HH:mm')}</h4></div>
+      <div className='itemShare tc center ma1 pa2 br2 bg-white grow'><h4 className="b bg-white">Pick up in:{item.address}</h4></div>
       <div id="imgContainer" className=' tc center ma1 pa2 br2 bg-white grow'><img className="tc imgFit center" src={(item.photo.url)} ></img></div>
       <div onClick={onDelete} className='itemShare tc center ma1 pa2 br2 bg-black white grow'>delete</div>
     </div>

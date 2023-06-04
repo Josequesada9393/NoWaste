@@ -63,15 +63,15 @@ function AddFoodItem() {
   return (
         <div className='AddItemForm shadow-5 br4 '>
          <button onClick={onSubmit} className="formButton ma2 bg-light-yellow f5 grow pv2 br2" type='submit'>Add a new food item!</button>
-        <input className="formInput ma1 pa2 br2 hover-bg-dark-blue " type="text" placeholder='Insert' name='title' value={title}
+        <input className="formInput inputFile black ma1 pa2 br2 hover-bg-dark-blue " type="text" placeholder='Insert' name='title' value={title}
         onChange={(e) => setTitle(e.target.value)} required/>
-        <input className='formInput ma1 pa2 br2 hover-bg-dark-blue' type="datetime-local" placeholder="date" name="date" value={date}
+        <input className='formInput inputFile black ma1 pa2 br2 hover-bg-dark-blue' type="datetime-local" placeholder="date" name="date" value={date}
         onChange={(e) => setDate(e.target.value)} required/>
-        <input className='formInput ma1 pa3 br2 hover-bg-dark-blue inputFile' type="file" title="" name="photo"
+        <input className='formInput ma1 pa3 inputFile br2 hover-bg-dark-blue' type="file" name="photo"
         onChange={handleImage} required/>
 
       <AutoComplete
-        className='formInput ma1 pa2 br2 hover-bg-dark-blue'
+        className='formInput inputFile ma1 pa2 br2 hover-bg-dark-blue'
         apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
         onPlaceSelected={(place) => {
           setCoordinates({

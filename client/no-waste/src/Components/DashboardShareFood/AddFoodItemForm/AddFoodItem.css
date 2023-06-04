@@ -14,6 +14,7 @@ flex-direction: column;
 .formButton{
   width: 30%;
   align-self: center;
+  display: inline-block;
 }
 
 .inputFile{
@@ -25,6 +26,3 @@ flex-direction: column;
   visibility: hidden;
 }
 
-.inputFile::-webkit-input-placeholder{
-
-}
