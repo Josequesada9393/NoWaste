@@ -1,11 +1,12 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #dae6ee
+  background-color: #b9d7eb
 }
 
 * {
-  font-family: 'Lora', Arial, Helvetica, sans-serif
+  font-family: 'Lora', Arial, Helvetica, sans-serif;
+  background-color: #b9d7eb
 }
 
 .niceFont {
@@ -45,9 +46,4 @@ body {
     background: linear-gradient(99deg, #121112 5%, #3c203d 50%, #1b161b 100%);
     opacity: 0.6;
 }
-
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 

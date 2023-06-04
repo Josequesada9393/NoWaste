@@ -10,13 +10,16 @@ import { useContext } from 'react';
 import { AuthContext } from './State/AuthContext';
 import ProfileOptions from './Components/Profile/ProfileOptions/ProfileOptions';
 import Register from './Components/Register/Register';
+import { Box } from '@chakra-ui/react';
 
 
 function App() {
 
   const {isAuth} = useContext(AuthContext);
  return (
-    <div className="App">
+
+    <Box 
+    className="App">
      <BrowserRouter>
        <NavBar/>
        <Routes>
@@ -29,7 +32,8 @@ function App() {
         <Route path="/about" element={<About />} />
          </Routes>
      </BrowserRouter>
-  </div>
+  </Box>
+
   );
 }
 export default App;
