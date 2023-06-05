@@ -25,7 +25,7 @@ function ShareFood({}) {
   }, [])
 
   return (
-    <div className='shareFood'>
+    <div className='shareFood pgBG'>
         <div className='pa3 br4 b'>
         <img className="tc center ma1" style={{ borderRadius: '10px', opacity: 0.7, width: '80px' }} src={dining}></img>
         <h1 className='tc center  niceFont consolas'>Hi {currentUser && currentUser.name}, what do you want to share today?</h1>

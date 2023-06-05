@@ -11,6 +11,7 @@ import { AuthContext } from './State/AuthContext';
 import ProfileOptions from './Components/Profile/ProfileOptions/ProfileOptions';
 import Register from './Components/Register/Register';
 import { Box } from '@chakra-ui/react';
+import './App.css'
 
 
 function App() {

@@ -59,7 +59,6 @@ function AddFoodItem() {
     setPhoto(reader.result)
     }
   }
-
   return (
         <div className='AddItemForm shadow-5 br4 '>
          <button onClick={onSubmit} className="formButton ma2 bg-light-yellow f5 grow pv2 br2" type='submit'>Add a new food item!</button>
@@ -70,18 +69,18 @@ function AddFoodItem() {
         <input className='formInput ma1 pa3 inputFile br2 hover-bg-dark-blue' type="file" name="photo"
         onChange={handleImage} required/>
 
-      <AutoComplete
+  <AutoComplete
+        // apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
         className='formInput inputFile ma1 pa2 br2 hover-bg-dark-blue'
-        apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
         onPlaceSelected={(place) => {
           setCoordinates({
           lat: place.geometry.location.lat(),
-            lng: place.geometry.location.lng()
+          lng: place.geometry.location.lng()
           })
           setAddress(place.formatted_address)
         }
   }
-/>
+/> 
     </div>
   )
 }

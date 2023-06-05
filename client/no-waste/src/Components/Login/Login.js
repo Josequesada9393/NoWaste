@@ -22,8 +22,8 @@ function Login({ }) {
   }
 
   return (
-    <>
-      <div id="tsparticles"></div>
+    <div className='pgBG'>
+      <div id="tsparticles "></div>
         <div id="alegreya" className="br2 ba dark-gray mv4 mw5 center">
           <main className="pa4 black-80 tc">
             <div className="measure">
@@ -66,7 +66,7 @@ function Login({ }) {
           </main>
             </div>
 
-      </>
+      </div>
   )
 }
 

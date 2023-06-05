@@ -1,0 +1,12 @@
+.map-container{
+    width: 60%;
+    height: 450px;
+    border-radius: 20px;
+    border: 4px black solid;
+    z-index: 1;
+  }
+  
+  .mainCont {
+    z-index: 3;
+    background-color: ;
+  }

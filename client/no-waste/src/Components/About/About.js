@@ -2,10 +2,8 @@ import React from 'react'
 
 function About() {
   return (
-    <div>
-
-
-     <article className="center mw5 mw6-ns hidden ba mv4">
+    <div className='pgBG'>
+     <article className="center  mw6-ns hidden ba ">
         <h1 className="f4 bg-near-black white grow mv0 pv2 ph3">Why it matters</h1>
             <div className="pa3 bt">
                <p className="f6 f5-ns lh-copy grow measure mv0">

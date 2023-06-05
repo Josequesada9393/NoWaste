@@ -9,7 +9,6 @@ import Map from '../MAP/Map'
 import { AuthContext } from '../../State/AuthContext'
 import { FoodItemsContext } from '../../State/ItemsContext'
 
-
 function FindFood() {
 
   const { currentUser } = useContext(AuthContext);
@@ -27,12 +26,13 @@ function FindFood() {
   }, [])
   return (
 
-    <div>
-      <div className='title br4 w-80 tc center b h2 w5 ma5'>
+    <div className="pgBG">
+      <div className='title br4 w-80 tc center b h2 w5 '>
       <img className="tc center ma1" style={{ borderRadius: '10px', opacity: 0.7, width: '80px' }} src={dining}></img>
       <h1 className='tc center niceFont consolas'>Food near you</h1></div>
       <FoodShared items={filtered} />
       <Map items={filtered} />
+
 
       <RouteButtons route={"../sharefood"} text={'Share food with your community'}></RouteButtons>
       <RouteButtons route={"../reviews"} text={'Check your reviews'}></RouteButtons>
