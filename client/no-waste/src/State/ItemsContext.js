@@ -1,16 +1,9 @@
 import { createContext, useEffect, useState, useContext } from "react";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
-import { findFood, findReviews } from "../ApiServices/ApiServices";
 
 
 
-
-
-
-//auth0 logic, if user does not exist, reject, please register
-
-//if user exists, then set the new userState
 
 export const FoodItemsContext = createContext({
   foodItems: null,

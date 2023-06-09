@@ -3,7 +3,6 @@ import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import IconLogin from '../../Style/IconLogin'
 import { loginIn } from '../../ApiServices/ApiServices'
-import { LoginContext } from '../../State/LoginContext'
 import { AuthContext } from '../../State/AuthContext'
 import { registerUser } from '../../ApiServices/ApiServices'
 
@@ -26,7 +25,7 @@ const [loading, setLoading] = useState(false)
   }
 
   return (
-    <>
+    <div className='pgBG'>
       <div id="tsparticles"></div>
         <div id="alegreya" className="br2 ba dark-gray mv4 mw5 center">
           <main className="pa4 black-80 tc">
@@ -78,7 +77,7 @@ const [loading, setLoading] = useState(false)
           </main>
             </div>
 
-      </>
+     </div>
   )
 }
 

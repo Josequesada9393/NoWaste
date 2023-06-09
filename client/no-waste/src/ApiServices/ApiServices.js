@@ -1,7 +1,7 @@
 
-// const url = "http://localhost:4000"
+const url = "http://localhost:4000"
 // const url = "https://nowasteserver.vercel.app"
-const url = "https://nowasteserver.onrender.com"
+// const url = "https://nowasteserver.onrender.com"
 
  const loginIn = (email, password) => {
     return fetch(`${url}/login`, {
@@ -17,8 +17,8 @@ const url = "https://nowasteserver.onrender.com"
       })
  }
 
-const findFood = async (userId) => {
-  return fetch(`${url}/findFood/${userId}`)
+const findFood = async () => {
+  return fetch(`${url}/findFood`)
     .then(response => response.json())
     .then(data => data)
     .catch((error) => console.log(error, "error fetching"))
@@ -56,10 +56,9 @@ const getItems = async () => {
             console.error('Error:', error);
         });
 }
-
 const addItem = async (id, title, date, ownerName, photo, address, coordinates) => {
   try {
-     return await fetch(`${url}/addItem`, {
+      await fetch(`${url}/addItem`, {
       method: 'POST',
       body: JSON.stringify({ id, title, date, ownerName, photo, address, coordinates }),
       headers: { 'Content-Type': 'application/json' },

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { LoginContext } from '../../State/LoginContext';
 import { useContext } from 'react';
 import ReviewsItems from './ReviewsItems';
 import { FoodItemsContext } from '../../State/ItemsContext';

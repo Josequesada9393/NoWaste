@@ -20,13 +20,13 @@ function AddFoodItem() {
     lat: null,
     lng: null
   })
+console.log(coordinates, address)
   const onSubmit = async (e) => {
-    e.preventDefault()
+
     if (title === '' || date === '' || photo === '' || address === '') return;
-  
+
     const dateNow = new Date(Date.now());
     const dateEntered = new Date(date);
-  
     if (dateNow >= dateEntered) {
       alert("You can't go back in time");
     } else {
@@ -38,6 +38,7 @@ function AddFoodItem() {
         setAddress('');
         const newItems = await findFood(currentUser.id);
         setFoodItems(newItems)
+
       } catch (error) {
         console.error('Error adding item:', error);
       }
@@ -70,8 +71,8 @@ function AddFoodItem() {
         onChange={handleImage} required/>
 
   <AutoComplete
-        // apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
-        className='formInput inputFile ma1 pa2 br2 hover-bg-dark-blue'
+        apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+        className='formInput black inputFile ma1 pa2 br2 hover-bg-dark-blue'
         onPlaceSelected={(place) => {
           setCoordinates({
           lat: place.geometry.location.lat(),

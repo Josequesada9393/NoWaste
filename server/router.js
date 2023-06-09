@@ -16,7 +16,7 @@ router.post('/addItem', user.addItem)
 
 router.post('/addReview', user.addReview)
 
-router.get('/findFood/:id', user.findAllOwnerItems);
+router.get('/findFood', user.findFood);
 
 router.get('/findReview/:id', user.fetchReview)
 

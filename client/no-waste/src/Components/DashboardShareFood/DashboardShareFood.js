@@ -16,8 +16,9 @@ function ShareFood({}) {
   const { currentUser } = useContext(AuthContext);
   const {setFoodItems} = useContext(FoodItemsContext);
 
+  
  async function getItems() {
-    const items = await findFood(currentUser.id);
+    const items = await findFood();
     setFoodItems(items);
   }
   useEffect(() => {
