@@ -5,12 +5,7 @@ margin-top: 30px;
 }
 
 
-.fatherOfAll {
-  /* margin-top: 50px;
-  display: flex;
-  overflow-y: auto;
-  width: auto;
-  height: 100%; */
+.reviewContainer {
     display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(4, 1fr);

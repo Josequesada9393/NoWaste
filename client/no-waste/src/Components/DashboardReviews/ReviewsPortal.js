@@ -22,7 +22,7 @@ function ReviewsPortal() {
   }, [])
 
   return (
-    <div className='fatherOfAll'>
+    <div className='reviewContainer pgBG'>
       {reviews ? reviews.map((review) => <ReviewsItems review={review} />): [].map((review) => <ReviewsItems review={review} />)}
     </div>
   )

@@ -21,6 +21,7 @@ export const AuthProvider = ({ children }) => {
   const [isAuth, setIsAuth] = useState(false)
 
   const logout = () => {
+    setIsAuth(false)
     setCurrentUser(null)
   }
 
@@ -32,7 +33,6 @@ export const AuthProvider = ({ children }) => {
     } else {
       cookies.remove("userToken");
       setIsAuth(false)
-
     }
   }, [currentUser])
 

@@ -67,7 +67,7 @@ console.log(coordinates, address)
         onChange={(e) => setTitle(e.target.value)} required/>
         <input className='formInput inputFile black ma1 pa2 br2 hover-bg-dark-blue' type="datetime-local" placeholder="date" name="date" value={date}
         onChange={(e) => setDate(e.target.value)} required/>
-        <input className='formInput ma1 pa3 inputFile br2 hover-bg-dark-blue' type="file" name="photo"
+        <input className='formInput ma1 pa3 inputFile br2 hover-bg-dark-blue' type="file" accept="image/*" name="photo"
         onChange={handleImage} required/>
 
   <AutoComplete
