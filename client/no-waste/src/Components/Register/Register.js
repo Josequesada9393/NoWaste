@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import IconLogin from '../../Style/IconLogin'
 import { loginIn } from '../../ApiServices/ApiServices'
 import { AuthContext } from '../../State/AuthContext'
@@ -11,7 +11,7 @@ function Register({ }) {
  const { setCurrentUser, currentUser, isAuth, logout } = useContext(AuthContext);
 const [logUser, setLogUser] = useState(null);
 const [loading, setLoading] = useState(false)
-
+const navigate = useNavigate()
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -20,6 +20,7 @@ const [loading, setLoading] = useState(false)
     setTimeout(() => {
       registerUser(logUser);
       setLoading(false)
+      navigate('/')
     }, 2000); // Executes the callback function after a 2000ms (2 seconds) delay
     
   }

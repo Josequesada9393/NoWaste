@@ -20,7 +20,6 @@ function AddFoodItem() {
     lat: null,
     lng: null
   })
-console.log(coordinates, address)
   const onSubmit = async (e) => {
 
     if (title === '' || date === '' || photo === '' || address === '') return;

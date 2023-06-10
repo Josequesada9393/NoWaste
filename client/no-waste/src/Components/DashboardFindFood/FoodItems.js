@@ -19,7 +19,6 @@ function FoodItems() {
     }
     getCurr()
   }, [foodItems])
-  
   return (
 
     <div className='container shadow-5 br2 bg-transparent w-70 '>

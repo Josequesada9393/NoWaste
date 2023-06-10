@@ -13,12 +13,11 @@ function FoodSharedItem({item}) {
   const [isSpinner, setIsSpinner] = useState(false)
   const [reviewThanks, setReviewThanks] = useState(false)
   const [review, setReview] = useState('')
-
   const showReviewBox = () => {
     setShowReview(!showReview)
   }
 
-  const onSubmitReview = () => {
+  const onSubmitReview = async () => {
     const itemOwnerId = item.ownerId;
     const itemName = item.title;
     const reviewerId = currentUser.id;//
@@ -31,8 +30,11 @@ function FoodSharedItem({item}) {
     setShowReview(false)
       setIsSpinner(false)
       setReviewThanks(true)
+      alert(`${item.ownerName} will see your review in their profile`)
+
     }, 2500)
-    addReview(itemOwnerId, itemName, reviewerId, reviewerName, itemId, itemOwnerName, review, photo)
+    await addReview(itemOwnerId, itemName, reviewerId, reviewerName, itemId, itemOwnerName, review, photo)
+
   }
 
   const onBooking = () => {
@@ -48,15 +50,15 @@ function FoodSharedItem({item}) {
 
         {isBooked ? <>
           <div className='itemShare tc center ma1 b pa2 br2 bg-light-pink grow o-40 '><h4>{item.title} <a className='i white'> by {item.ownerName}</a></h4></div>
-          <div className='itemShare tc center ma1 pa2 br2 bg-white grow o-40'><h4><h4 className="b">Pick up by:</h4>{item.date}</h4></div>
-          <div className='itemShare tc center ma1 pa2 br2 bg-white grow o-40'><h4><h4 className="b">Pick up in:</h4>{item.address}</h4></div>
+          <div className='itemShare tc center ma1 pa2 br2 bg-white grow o-40'><h4><span className="b">Pick up by:</span>{item.date}</h4></div>
+          <div className='itemShare tc center ma1 pa2 br2 bg-white grow o-40'><h4><span className="b">Pick up in:</span>{item.address}</h4></div>
           <div className='itemShare tc center ma1 pa2 br2 bg-white grow o-40'><img className="tc center" src={item.photo.url} width="150px" height="auto"></img></div>
           <div className='itemShare tc center ma1 pa2 br2 bg-black white grow  o-40'><h4>Taken</h4></div>
         </> :
           <>
           <div className='itemShare tc center  b pa1 br2 black bg-light-pink grow'><h4>{item.title} <a className='i black'> by {item.ownerName}</a></h4></div>
-          <div className='itemShare tc center ma1 pa1 br2 bg-white grow'><h4><h4 className="b">Pick up by:</h4>{'date'}</h4></div>
-          <div className='itemShare tc center pa1 br2 bg-white grow'><h4><h4 className="b">Pick up in:</h4>{item.address}</h4></div>
+          <div className='itemShare tc center ma1 pa1 br2 bg-white grow'><h4><span className="b">Pick up by:</span>{'date'}</h4></div>
+          <div className='itemShare tc center pa1 br2 bg-white grow'><h4><span className="b">Pick up in:</span>{item.address}</h4></div>
           <div className='itemShare tc center ma1 pa1 br2 bg-white grow'><img className="tc center" src={item.photo.url} width="150px" height="auto"></img></div>
           <div className='itemShare tc center pa1 br2 bg-black white grow' onClick={onBooking}><h4>Book</h4></div>
           </>

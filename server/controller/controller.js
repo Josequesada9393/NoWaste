@@ -10,12 +10,6 @@ exports.addReview = async (req, res) => {
     const { itemOwnerId, reviewerId, reviewerName, itemId, itemOwnerName, review, photo } = await req.body;
     const newReview = await req.body;
     await ReviewModel.create(newReview)
-  // console.log(req.body)
-  // const id = await req.body.id;
-  // const review = await req.body;
-  // await user.updateOne({ _id: id }, { $push: { reviews: review}})
-  // const newUser = await user.find({_id:id})
-  // res.send(newUser)
   } catch (error) {
     res.send(error, 'review not added')
   }

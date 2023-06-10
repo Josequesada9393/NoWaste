@@ -8,7 +8,6 @@ import coverFood from '../../../assets/coverFood.png'
 function ProfileOptions({ }) {
   const {currentUser} = useContext(AuthContext)
   const bg = '#b9d7eb'
-
   return (
     <Box pos="relative" overflow="hidden" bg={bg} >
     <Box maxW="7xl" mx="auto">
